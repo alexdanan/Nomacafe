@@ -1,16 +1,3 @@
-<div id="mySidenav" class="sidenav">
-  <button class = "closeit">Close</button>
-  <a href="#">Account</a>
-  <a href="#">Favourites</a>
-  <a href="#">Booking History</a>
-  <a href="#">Credits</a>
-  <a href="#">Help Centre</a>
-  <a href="#">Logout</a>
-</div>
-
-<div id="main">
-  <button class = "openit">Open</button>
-</div>
 
 
 
@@ -28,19 +15,37 @@
 
 <% else %>
 
-
-
-  <!-- write event listener to close menu when clicked on another part -->
-
-  <div id = "favourite-bookings">
-  next bookigns hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-  </div>
-
-  <div class = "calendar-js" data-controller="calendar">
+<!--[+] Dashboard -->
+<section class="dashboard">
+  <div class="inner">
+    <!--[+] SLIDER BOOKS -->
+    <div class="recent-books">
+      <ul>
+        <!--[+] Recent Books Item-->
+        <li>
+          <div class="item-inner">
+            <span class="caffee-name">Cafe Name</span>
+            <button type="button" name="button">Book Again</button>
+          </div>
+        </li>
+        <!--[-] Recent Books Item-->
+      </ul>
+    </div>
+    <!--[-] SLIDER BOOKS -->
+    <!--[+] CALENDAR -->
+    <div class = "calendar-js" data-controller="calendar">
     <div id = "calendar" data-calendar-target="element" data-bookings="<%= @bookings.to_json%>">
 
     </div>
   </div>
+    <!--[-] CALENDAR --> 
+  </div>
+</section>
+<!--[+] Dashboard -->
+
+  <!-- write event listener to close menu when clicked on another part -->
+
+ 
 
 
 
