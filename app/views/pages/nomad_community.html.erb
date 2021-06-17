@@ -1,0 +1,21 @@
+<% @nomads.each do|nomad| %>
+  <p><%= nomad.email %>
+
+  <% unless current_user.follows?(nomad) %>
+
+    <%= simple_form_for @new_fav do |f| %>
+      <%= f.input :favouritable_id, as: :hidden, input_html: { value: nomad.id } %>
+      <%= f.input :favouritable_type, as: :hidden, input_html: { value: "User" } %>
+      <button type = "submit">
+        <i class="far fa-heart"></i>
+      </button>
+
+    <% end %>
+
+    <% end %>
+
+  <% end %>
+
+<p> Input a heart icon (ie already in favourites)</p>
+
+<i class="far fa-heart"></i>

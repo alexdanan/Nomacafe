@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "nomad_community", to: "pages#nomad_community"
   resources :favourites, only: [:index, :show, :new, :create, :delete]
   resources :dashboard, only: [:show]
   resources :cafes do
