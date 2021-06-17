@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
       @booking = Booking.find(params[:id])
       @bookings = Booking.all
       @table = Table.new
-      # authorize @booking
+      authorize @booking
       #TODO: comment this in when tis fixed
     end
   
@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     def create
       @booking = Booking.new(booking_params)
       @booking.user = current_user
-      #authorize @booking
+      authorize @booking
       @booking.table = @table
       if @booking.save
         redirect_to booking_path(@booking)
@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
     end
   
     def destroy
-      # authorize @booking
+      authorize @booking
       @booking.destroy
       redirect_to dashboard_path
     end
