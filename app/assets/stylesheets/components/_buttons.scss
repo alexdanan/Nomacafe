@@ -28,3 +28,15 @@
   background-color: $nomacafe;
   color: white;
 }
+
+
+.fa-heart:before {
+  color: $nomacafe;
+  font-size: 40px;
+  fill: red;
+
+}
+
+.btn-heart {
+  border: none;
+}

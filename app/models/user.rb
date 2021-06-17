@@ -21,6 +21,10 @@ class User < ApplicationRecord
 
   end
 
+  def follows?(favouritable)
+    favourites.where(favouritable: favouritable, user: self).any?
+  end
+
 
 
 end

@@ -50,4 +50,8 @@ class PagesController < ApplicationController
 
   end
 
+  def nomad_community
+    @nomads = User.where(nomacafe_type: "nomad")
+    @new_fav = Favourite.new
+  end
 end
