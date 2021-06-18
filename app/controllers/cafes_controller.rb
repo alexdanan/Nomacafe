@@ -33,6 +33,7 @@ class CafesController < ApplicationController
 
 
   def show
+    @booking = Booking.new
     @tables = @cafe.tables
     authorize @cafe
     authorize @tables

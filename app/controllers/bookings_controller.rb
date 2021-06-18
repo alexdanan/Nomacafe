@@ -1,11 +1,11 @@
 class BookingsController < ApplicationController
     before_action :find_table, only: [:new, :create, :edit]
     before_action :find, only: :destroy
-  
+
     def index
       @bookings = Booking.all
     end
-  
+
     def show
       @booking = Booking.find(params[:id])
       @bookings = Booking.all
@@ -13,12 +13,12 @@ class BookingsController < ApplicationController
       # authorize @booking
       #TODO: comment this in when tis fixed
     end
-  
+
     def new
       @booking = Booking.new
       #authorize @booking
     end
-  
+
     def create
       @booking = Booking.new(booking_params)
       @booking.user = current_user
@@ -30,34 +30,35 @@ class BookingsController < ApplicationController
         render 'tables/show'
       end
     end
-  
+
     def destroy
       # authorize @booking
       @booking.destroy
       redirect_to dashboard_path
     end
-  
+
     def update
       @booking = Booking.find(params[:id])
       @booking.update(booking_update_params)
       redirect_to dashboard_path
     end
     private
-  
+
     def booking_params
-      params.require(:booking).permit(:table_id, :start_time, :end_time, :status, :day)
+      params.require(:booking).permit(:table_id, :start_time, :end_time, :status, :day, slots: [])
+
     end
-  
+
     def booking_update_params
       params.require(:booking).permit(:status)
     end
-  
+
     def find_table
       @table = Table.find(params[:table_id])
     end
-  
+
     def find
       @booking = Booking.find(params[:id])
     end
-  
+
   end

@@ -1,9 +1,35 @@
 .single-cafe .inner .thumb {
-    width: 100%;
-    height: 320px;
-    /* background-size: cover; */
-    background-size: cover!important;
-    background-position: center!important;
+  width: 100%;
+  height: 50vh;
+  background-size: cover!important;
+  background-position: center!important;
+}
+.title-tab h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.cafe-review {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.nomad-profile .thumb {
+      max-width:0px;
+      max-height:0px;
+      background-size: cover!important;
+      background-position: center!important;
+      padding: 20px;
+      border-radius: 100%;
+}
+.title-tab {
+    margin-top: 30px;
+}
+.caffee-tabs ul li label {
+    margin: 0px;
+    padding: 0px;
+}
+.caffee-tabs{
+  position:sticky;
+  top:48px;
 }
 .caffee-tabs ul {
     margin: 0px;
@@ -35,8 +61,214 @@
 }
 /* END [TABS CONTROLS] */
 
+/* BURGER MENU */
+.expandet-burger{
+    transform: translate(-100vw);
+    display: none;
+}
+#burger:checked ~ .burger-menu .expandet-burger{
+  transform: translate(0px);
+  display: block;
+  width: calc(100% / 1.618);
+  height: 100vh;
+  position: absolute;
+  background: #fff;
+  left: 0px;
+  top: 0px;
+}
+.expandet-burger label svg {
+    width: 22px;
+    height: 22px;
+}
+.expandet-burger label {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    padding-left: 20px;
+}
+.expandet-burger ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.expandet-burger ul li {
+    line-height: 50px;
+    border-bottom: solid 1px #ccc;
+    padding-left: 20px;
+}
+.expandet-burger ul li a {
+    font-size: 15px;
+    color: #000;
+    text-decoration: none;
+}
+.expandet-burger ul li:hover {
+    background: #efefef;
+}
+/* BURGER MENU */
+
 /*START - SINGLE CAFFEE - BODY*/
+.slot-header, .slot-info, .slot-title {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.tab-item .title-tab h3 {
+    margin-bottom: 0px;
+}
+.cafe-info {
+    font-size: 12px;
+    font-weight: 500;
+    color: #696969;
+}
+.title-tab {
+    margin-bottom: 30px;
+}
+.cafe-review ul li, .cafe-review ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 45px;
+}
+.caffee-policy {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: 200;
+    font-style: italic;
+    font-size: 14px;
+}
+.cafe-review ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+.cafe-review ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cafe-review ul li {
+    width: 50%;
+}
 .tab-item .title-tab {
     padding-left: 20px;
 }
+.slot-header {
+    margin-bottom: 30px;
+}
+.slot-button {
+    height: 48px;
+    display: grid;
+    padding: .6rem;
+}
+.slot-button button {
+    border: none;
+    border-radius: 6px;
+    background: #800f14;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+}
+.slots ul {
+    width: 100%;
+    border-top: solid 1px #ccc;
+    margin-top: 30px;
+    padding:0px;
+}
+.slots ul li {
+    width: 100%;
+    line-height: 42px;
+    border-bottom: solid 1px #ccc;
+}
+.slots ul li span svg {
+    width: 21px;
+    height: 21px;
+}
+
+.slot-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+
+.slot-container{
+    border-top:solid 1px #ccc;
+    background: #f7f7f7;
+    margin-top: 1px;
+    display:none;
+}
+.slot-icons {
+    align-content: stretch;
+    display: flex;
+}
+.slot-icons span {
+    display: grid;
+    align-content: center;
+}
+.slot-icons svg {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.time {
+  margin-top: -10px;
+background: #f1f1f1;
+height: 18px;
+width: 36px;
+border-radius: 3px;
+border: solid 1px #ccc;
+font-size: 11px;
+display: grid;
+align-content: center;
+justify-content: center;
+font-weight: 500;
+padding-left: 15px;
+padding-right: 15px;
+}
+.slot-info {
+    display: flex;
+  }
+  .spots-info {
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+}
+  .slot-info-container {
+      padding-left:30px;
+      border-top: solid 1px #ccc;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+  }
+  .spot-nomad-info {
+    display: flex;
+}
+.spot-nomad-info a {
+    font-size: 14px;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #800f14;
+}
+.label-close{
+  display:none;
+}
+  /* SLOT TABS */
+  #slot-1:checked ~ .slot-container,
+  #slot-2:checked ~ .slot-container {
+    display: block!important;
+}
+
+#slot-1:checked ~  .slot-title .label-open {
+  display:none!important;
+}
+
+#slot-1:checked ~ .slot-title .label-close{
+  display:block!important;
+}
+  /* SLOT TABS */
 /*END - SINGLE CAFFEE - BODY */
