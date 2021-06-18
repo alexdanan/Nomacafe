@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   # [...]
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_user_type
   before_action :authenticate_user!
   include Pundit
 
@@ -14,11 +16,19 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys:[:nomacafe_type])
+  end
+
   private
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/ ||
     params[:controller] == "dashboard" || params[:controller] == "favourites"
 
+  end
+
+  def set_user_type
+    session[:user_type] = params[:user_type] if controller_name == "pages" && action_name == "dashboard" && current_user.nil?
   end
 end
