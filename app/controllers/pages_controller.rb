@@ -24,7 +24,7 @@ class PagesController < ApplicationController
       @user_cafe = current_user.cafe
 
 
-    @tables = @user_cafe&.tables
+      @tables = @user_cafe&.tables
 
 
       @reviews = @user_cafe.reviews
@@ -42,7 +42,8 @@ class PagesController < ApplicationController
       if min_credits == max_credits
         @user_cafe_credits = "#{min_credits}€/h/table"
       else
-        @user_cafe_credits ="from #{min_credits}€ to #{max_credits}€ /h/table (dependent on table size)"
+        @user_cafe_credits ="from #{min_credits}€ to #{max_credits}€ /h/table
+        (dependent on table size)"
       end
 
 
@@ -53,5 +54,8 @@ class PagesController < ApplicationController
   def nomad_community
     @nomads = User.where(nomacafe_type: "nomad")
     @new_fav = Favourite.new
+  end
+
+  def destroy_nomad
   end
 end

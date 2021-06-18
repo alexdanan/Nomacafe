@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "nomad_community", to: "pages#nomad_community"
-  resources :favourites, only: [:index, :show, :new, :create, :delete]
+  resources :favourites, only: [:index, :show, :new, :create, :destroy]
   resources :dashboard, only: [:show]
   resources :cafes do
     resources :tables, only: [:new, :create, :edit, :update, :destroy]

@@ -31,6 +31,9 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
+    @fav = Favourite.find_by(favouritable_id: params[:id])
+    @fav.destroy
+    redirect_to nomad_community_path, notice: "Nomad has been removed from your favourites"
   end
 
   private
