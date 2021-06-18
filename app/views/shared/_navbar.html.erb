@@ -109,7 +109,7 @@
         </li>
         <% if user_signed_in? %>
           <li>
-            <a> <%= link_to "Logout", cafes_path  %> </a>
+            <a> <%= link_to "Logout", destroy_user_session_path, method: :delete  %> </a>
           </li>
         <% else %>
           <li>
