@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-    before_action :find_table, only: [:new, :create, :edit]
+    before_action :find_table, only: [:new, :create]
     before_action :find, only: :destroy
   
     def index
@@ -12,6 +12,11 @@ class BookingsController < ApplicationController
       @table = Table.new
       authorize @booking
       #TODO: comment this in when tis fixed
+    end
+
+    def edit
+      @booking = Booking.find(params[:id])
+      authorize @booking
     end
   
     def new
@@ -41,11 +46,12 @@ class BookingsController < ApplicationController
       @booking = Booking.find(params[:id])
       @booking.update(booking_update_params)
       redirect_to dashboard_path
+      authorize @booking
     end
     private
   
     def booking_params
-      params.require(:booking).permit(:table_id, :start_time, :end_time, :status, :day)
+      params.require(:booking).permit(:table_id, :start_time, :end_time, :status, :day, :visible)
     end
   
     def booking_update_params
