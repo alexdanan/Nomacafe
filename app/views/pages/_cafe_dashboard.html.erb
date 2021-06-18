@@ -10,7 +10,7 @@
           <h2> <%= @user_cafe.name %></h2>
           <p> <%= @user_cafe.location %></p>
         </div>
-        <h2 class="card-trip-pricing">Minimim credits applied: <%=@user_cafe_credits  %></h2>
+        <p class="card-trip-pricing">Minimim credits applied: <%=@user_cafe_credits  %></p>
       </div>
     </div>
 
@@ -48,9 +48,14 @@
 <!-- CAFE_TABLES TAB -->
 
 
-<div data-tabsdash-target="cafetables">
+<div class="cafe-tables" data-tabsdash-target="cafetables">
+<ul>
+
+
   <% @tables.each do |table| %>
+    <li>
   <h5><%= table.name %></h5>
+
       <p> <strong>Number of Spots: </strong> <%= table.spots %>
           <strong>Type of Seats: </strong> <%= table.seat %>
           <strong>Minimum Credits: </strong><%= table.min_credits %>
@@ -59,9 +64,9 @@
 
       <p><%= link_to "Edit Table", edit_cafe_table_path(table.cafe_id, table), remote:true %></p>
       <p> <%= link_to "Delete Table", [table.cafe, table], method: :delete, remote:true %></p>
-
+    </li>
   <% end %>
-
+</ul>
 <p><%= link_to "Add a new table", new_cafe_table_path(@user_cafe), remote:true %></p>
 </div>
 

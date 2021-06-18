@@ -1,0 +1,129 @@
+.fc-list-event {
+
+}
+
+.fc-list-event-time{
+
+}
+
+.fc-list-day-cushion{
+
+}
+
+.fc-list-day-text{
+
+}
+
+.fc-list-day-side-text{
+
+}
+
+.fc-dayGridMonth-button{
+  background-color: $nomacafe !important;
+}
+
+.fc-timeGridWeek-button{
+  background-color: $nomacafe !important;
+}
+
+.fc-listWeek-button{
+  background-color: $nomacafe !important;
+}
+
+.fc-today-button{
+  background-color: $nomacafe !important;
+}
+
+.fc-col-header-cell-cushion{
+  color: $nomacafe !important;
+}
+
+.fc-daygrid-day-number{
+  color: $nomacafe !important;
+}
+
+.fc-prev-button {
+  background-color: $nomacafe !important;
+}
+
+.fc-next-button {
+  background-color: $nomacafe !important;
+}
+
+.fc-timegrid-slot-label-cushion {
+  color: $nomacafe !important;
+}
+
+.fc-timegrid-axis-cushion {
+  color: $nomacafe !important;
+}
+
+.fc-list-day-text {
+  color: $nomacafe !important;
+}
+
+.fc-list-day-side-text{
+  color: $nomacafe !important;
+}
+
+.fc-list-event-time{
+  color: $nomacafe !important;
+}
+
+.fc-event-title{
+  color: green;
+  word-wrap: break-word !important;
+}
+
+.fc-event-time {
+  color: $nomacafe !important;
+}
+
+// .fc-daygrid-day-frame {
+//   background-color: $nomacafe !important;
+// }
+
+.fc-daygrid-event-dot{
+  border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid var(--fc-event-border-color, $nomacafe) !important;
+}
+
+.fc-event-title-container{
+  background-color: green !important;
+  .fc-event-title {
+    color: white !important;
+  }
+  .fc-event-time{
+    background-color: $nomacafe !important;
+  }
+}
+
+.fc-daygrid, .fc-timegrid {
+  .fc-event-img{
+    display: none;
+  }
+}
+  
+.fc-event-img img{
+  height: 100px;
+  width: 100px
+
+}
+
+.fc-list-event-title{
+  display: flex;
+}
+
+.data-original-title{
+  font-size: 8px !important;
+}
+
+.fc-event-main{
+  background-color: green !important;
+  width: fit-content;
+}
+
+.fc-list-event-dot{
+  border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid var(--fc-event-border-color, green) !important;
+}
+
+//fit divs around each text title and then use the max-width

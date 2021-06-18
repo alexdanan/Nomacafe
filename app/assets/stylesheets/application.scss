@@ -16,3 +16,44 @@
  * {
     font-family: 'Poppins', sans-serif;
   }
+  .map-view #map, .map-view {
+      min-height: calc(100vh - 56px)!important;
+  }
+  .mapboxgl-ctrl-top-right {
+      position: fixed;
+      top: 70px;
+      z-index: 9999999;
+      left: 0px;
+      right: 0px;
+      margin: auto;
+      width: 320px;
+      display: flex;
+  }
+  .map-list-btn {
+    position: fixed;
+    bottom: 30px;
+    z-index: 99999;
+    left: 0px;
+    right: 0px;
+}
+.card-trip {
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 15px #00000029;
+    min-height: 60vh;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    margin-bottom: 1rem;
+}
+.card-trip:first-child {
+    margin-top: .5rem;
+}
+.cafe-tables ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.cafe-tables ul li {
+    padding-left: 20px;
+}

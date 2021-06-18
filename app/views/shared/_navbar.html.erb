@@ -34,7 +34,7 @@
   </div>
 </div> -->
 
-
+<% if user_signed_in? %>
 
   <!--[+] HEADER -->
   <nav class="header-nav">
@@ -90,36 +90,59 @@
       </label>
       <ul>
         <li>
-          <a> <%= link_to 'Account', dashboard_path  %> </a>
+          <a> <%= link_to 'Account', user_path(current_user)  %> </a>
         </li>
         <li>
-          <a> <%= link_to "Favourites", cafes_path%> </a>
+          <a> <%= link_to "Favourites", favourites_path%> </a>
         </li>
         <li>
-          <a> <%= link_to "Credits", cafes_path %> </a>
+          <a> <%= link_to "Nomad Community", nomad_community_path%> </a>
         </li>
         <li>
-          <a> <%= link_to "Booking History", cafes_path %></a>
+          <a> <%= link_to "Booking History", cafes_path %> </a>
+        </li>
+        <li>
+          <a> <%= link_to "Credits", cafes_path %></a>
         </li>
         <li>
           <a> <%= link_to "Help & FAQ", cafes_path  %> </a>
         </li>
-        <li>
-          <a> <%= link_to "Logout", cafes_path  %> </a>
-        </li>
+
+          <li>
+            <a> <%= link_to "Logout", destroy_user_session_path, method: :delete  %> </a>
+          </li>
+
+
+           <!--  <a> <%= link_to "I'm a Nomad", dashboard_path(user_type: "nomad")  %> </a> || <a> <%= link_to "I'm a Café", dashboard_path(user_type: "cafe")  %> </a> -->
+
 
       </ul>
     </div>
   </div>
   <!--[-] BURGER MENU -->
 
+  <!--[-]<%  current_page?(dashboard_path) %>-->
+ <!--[-] <%  %>-->
+
+
+
   <!--[+] PROFILE AVATAR-->
   <div class="profile-hedader">
     <div class="profile-thumb">
-      <div class="thumb" style="background:url('https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-      <div class="profile-name">@Genrik</div>
+      <% if current_user.photo.attached? %>
+        <div class="thumb" style="background:url('<%= cl_image_path current_user.photo.key %>')"></div>
+      <% else %>
+      <div class="thumb" style="background:url('https://kitt.lewagon.com/placeholder/users/arthur-littm')"></div>
+    <% end %>
+      <div class="profile-name">@<%= current_user.user_name %></div>
     </div>
   </div>
+
+    <a href="/cafes"><i class="fas fa-search"></i></a>
+
+  <!--[-]<%  %>-->
+    <a href="/dashboard"><i class="fas fa-calendar-alt"></i></a>
+
   <!--[-] PROFILE AVATAR-->
   <!--[+] BELL NOTIFICATION -->
   <div class="header-bell">
@@ -171,3 +194,4 @@
   <!--[-] BELL NOTIFICATION -->
   </nav>
   <!--[-] HEADER -->
+  <% end %>

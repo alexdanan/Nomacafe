@@ -1,0 +1,76 @@
+<!-- <h1> Favourite Nomads</h1>
+
+
+  <% @nomads.each do |nomad| %>
+  <ul>
+    <li>
+    <%= nomad.email %>
+    </li>
+  </ul>
+  <% end %>
+
+
+<h1>Favourite Cafes</h1>
+
+ <% @cafes.each do |cafe| %>
+  <%= @cafe.name %>
+ <% end %> -->
+
+
+
+<div data-controller="tabsshow">
+
+    <div class="cafe-tabs">
+        <ul class="list-inline tabs-underlined">
+          <li>
+            <div class="tab-underlined active" data-action="click->tabsshow#bookings" data-tabsshow-target="booktab">Favourite Nomads</div>
+          </li>
+          <li>
+            <div class="tab-underlined" data-action="click->tabsshow#menu" data-tabsshow-target="menutab">Favourite Cafes</div>
+          </li>
+        </ul>
+     </div>
+
+  <div class="show-bookspot" data-tabsshow-target="bookspot">
+      <% @nomads.each do|nomad| %>
+  <div class="notification">
+     <% if nomad.photo.attached? %>
+      <img src='<%= cl_image_path nomad.photo.key %>' class="avatar-large" />
+    <% else %>
+      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+    <% end %>
+    <div class="notification-content">
+      <p>@<%= nomad.user_name %></p>
+      <p><small><%= link_to "See profile", user_path(nomad) %></small></p>
+    </div>
+
+    <div class="notification-actions">
+    <% if current_user.follows?(nomad) %>
+
+        <a><i class="fas fa-heart"></i></a>
+      <% else %>
+
+        <%= simple_form_for @new_fav do |f| %>
+          <%= f.input :favouritable_id, as: :hidden, input_html: { value: nomad.id } %>
+          <%= f.input :favouritable_type, as: :hidden, input_html: { value: "User" } %>
+
+
+           <a> <button class="btn-heart" type = "submit">
+            <i class="far fa-heart"></i>
+          </button> </a>
+        <% end %>
+      <% end %>
+    </div>
+
+
+  </div>
+<% end %>
+
+
+
+  <div data-tabsshow-target="showmenu">
+   <% @cafes.each do |cafe| %>
+    <%= @cafe.name %>
+   <% end %>
+    </div>
+  </div>

@@ -6,7 +6,10 @@ class Booking < ApplicationRecord
   enum status: [:pending, :accepted, :declined]
 
   def booking_headline
-    "You have a #{status} seat at #{table.cafe.name} located at #{table.cafe.location} you have a #{table.name} #{table.seat} costing €#{((table.min_credits * (end_time - start_time)) / 7200)}"
+    "Your seat has been #{status} at #{table.cafe.name} 
+    located at #{table.cafe.location}. You have a #{table.name} 
+    with a #{table.seat} 
+    costing a total of €#{((table.min_credits * (end_time - start_time)) / 7200)}"
   end
 
 end

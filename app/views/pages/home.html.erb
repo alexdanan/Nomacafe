@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="back-homepage-image" style="background:url('https://specials-images.forbesimg.com/imageserve/5fd8e0125d0ca00254f80748/960x0.jpg?fit=scale')">
+
+<div class= "container py-5">
+  <h1>NomaCafe</h1>
+  <h6>Sign up | Login</h6>
+  <div class="btn btn-success">
+    <a> <%= link_to "I'm a Nomad", dashboard_path(user_type: "nomad")  %> </a>
+  </div>
+  <div class="btn btn-success">
+    <a> <%= link_to "I'm a Café", dashboard_path(user_type: "cafe")  %> </a>
+  </div>
+</div>
+
+</div>

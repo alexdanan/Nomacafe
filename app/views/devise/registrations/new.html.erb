@@ -4,6 +4,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :nomacafe_type,
+      as: :hidden,
+      input_html: { value: session[:user_type] || "nomad" } %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,

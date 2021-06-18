@@ -28,15 +28,46 @@ export default class extends Controller {
     let bookings = JSON.parse(this.elementTarget.dataset.bookings)
     let calendar = new Calendar(this.elementTarget, {
       plugins: [dayGridPlugin, timeGridPlugin, listPlugin],
-      initialView: 'dayGridMonth',
+      initialView: 'listWeek',
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,listWeek'
       },
-      events: bookings
+      events: bookings,
+      eventContent: function (info) {
+        console.log(info)
+        let arrayOfDomNodes = []
+        // title event
+        let titleEvent = document.createElement('div')
+        if (info.event._def.title) {
+          titleEvent.setAttribute("data-toggle", "tooltip")
+          titleEvent.setAttribute("title", info.event._def.title)
+          titleEvent.setAttribute("data-placement", "top")
+          titleEvent.innerHTML = info.view.type == "listWeek" ? info.event._def.title : info.event.extendedProps.short_title
+          titleEvent.classList = info.view.type == "dayGridMonth" ? "fc-event-title" : "fc-list-event-title" //seperates the list/month view 
+        }
+
+        // image event
+        let imgEventWrap = document.createElement('div')
+        if (info.event.extendedProps.image_url) {
+          let imgEvent = '<img src="' + info.event.extendedProps.image_url + '" >'
+          imgEventWrap.classList = "fc-event-img"
+          imgEventWrap.innerHTML = imgEvent;
+        }
+
+        arrayOfDomNodes = [titleEvent, imgEventWrap]
+
+        return { domNodes: arrayOfDomNodes }
+      }
+
+
     });
+
     calendar.render();
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
   }
 
   initColorChange() {

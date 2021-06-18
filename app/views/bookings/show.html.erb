@@ -2,13 +2,14 @@
   <div class="border">
     <h1>Booking Confirmed!</h1>
     <p>
-        You have a session at <em><%=@booking.table.cafe%>
-        at table <%=@booking.table%>
+        You have a session at <em><%=@booking.table.cafe.name%>
+        at table <%=@booking.table.name%>
         on <%=@booking.day%>
         starting <%=@booking.start_time.strftime("at %I:%M%p")%>
         finishing <%=@booking.end_time.strftime("at %I:%M%p")%>
         Booking status: <%=@booking.status%></p>
         </em>
+        <%=link_to 'Edit it', edit_booking_path, class: "btn btn-primary btn-block"%>
         <%=link_to 'Go To Dashboard', dashboard_path, class: "btn btn-primary btn-block"%>
   </div>
 </div>
