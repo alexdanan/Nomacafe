@@ -1,0 +1,50 @@
+<!-- <h1> Favourite Nomads</h1>
+
+
+  <% @nomads.each do |nomad| %>
+  <ul>
+    <li>
+    <%= nomad.email %>
+    </li>
+  </ul>
+  <% end %>
+
+
+<h1>Favourite Cafes</h1>
+
+ <% @cafes.each do |cafe| %>
+  <%= @cafe.name %>
+ <% end %> -->
+
+
+
+<div data-controller="tabsshow">
+
+    <div class="cafe-tabs">
+        <ul class="list-inline tabs-underlined">
+          <li>
+            <div class="tab-underlined" data-action="click->tabsshow#bookings" data-tabsshow-target="booktab">Favourite Nomads</div>
+          </li>
+          <li>
+            <div class="tab-underlined" data-action="click->tabsshow#menu" data-tabsshow-target="menutab">Favourite Cafes</div>
+          </li>
+        </ul>
+     </div>
+
+  <div class="show-bookspot" data-tabsshow-target="bookspot">
+      <% @nomads.each do |nomad| %>
+        <ul>
+          <li>
+          <%= nomad.email %>
+          </li>
+        </ul>
+      <% end %>
+  </div>
+
+
+  <div data-tabsshow-target="showmenu">
+   <% @cafes.each do |cafe| %>
+    <%= @cafe.name %>
+   <% end %>
+    </div>
+  </div>

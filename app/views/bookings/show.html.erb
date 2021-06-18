@@ -2,8 +2,8 @@
   <div class="border">
     <h1>Booking Confirmed!</h1>
     <p>
-        You have a session at <em><%=@booking.table.cafe%>
-        at table <%=@booking.table%>
+        You have a session at <em><%=@booking.table.cafe.name%>
+        at table <%=@booking.table.name%>
         on <%=@booking.day%>
         starting <%=@booking.start_time.strftime("at %I:%M%p")%>
         finishing <%=@booking.end_time.strftime("at %I:%M%p")%>
