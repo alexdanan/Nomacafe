@@ -36,6 +36,7 @@ export default class extends Controller {
       },
       events: bookings
 
+
     });
 
     calendar.render();

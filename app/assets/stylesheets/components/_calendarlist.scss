@@ -69,3 +69,29 @@
 .fc-list-event-time{
   color: $nomacafe !important;
 }
+
+.fc-event-title{
+  color: green;
+}
+
+.fc-event-time {
+  color: $nomacafe !important;
+}
+
+// .fc-daygrid-day-frame {
+//   background-color: $nomacafe !important;
+// }
+
+.fc-daygrid-event-dot{
+  border: calc(var(--fc-daygrid-event-dot-width, 8px) / 2) solid var(--fc-event-border-color, $nomacafe) !important;
+}
+
+.fc-event-title-container{
+  background-color: green !important;
+  .fc-event-title {
+    color: white !important;
+  }
+  .fc-event-time{
+    background-color: $nomacafe !important;
+  }
+}
