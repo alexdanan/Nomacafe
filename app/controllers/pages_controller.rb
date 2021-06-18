@@ -13,7 +13,9 @@ class PagesController < ApplicationController
     @bookings = current_user.bookings.map{|booking| {
       title: booking.booking_headline, 
       start: booking.start_time.strftime("%Y-%m-%dT%H:%M:%S"), 
-    end: booking.end_time.strftime("%Y-%m-%dT%H:%M:%S")
+      end: booking.end_time.strftime("%Y-%m-%dT%H:%M:%S"),
+      image_url: helpers.cl_image_path(booking.table.cafe.photo.key),
+      short_title: "Booking confirmed at #{booking.cafe.name}" 
     }}
 
     start_date = params.fetch(:start_date, Date.today).to_date
