@@ -104,10 +104,18 @@
         <li>
           <a> <%= link_to "Help & FAQ", cafes_path  %> </a>
         </li>
-        <li>
-          <a> <%= link_to "Logout", cafes_path  %> </a>
-        </li>
-
+        <% if user_signed_in? %>
+          <li>
+            <a> <%= link_to "Logout", cafes_path  %> </a>
+          </li>
+        <% else %>
+          <li>
+            <a> <%= link_to "I'm a Nomad", dashboard_path(user_type: "nomad")  %> </a>
+          </li>
+          <li>
+            <a> <%= link_to "I'm a Café", dashboard_path(user_type: "cafe")  %> </a>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
