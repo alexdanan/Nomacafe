@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.back-homepage-image {
+  height: 800px;
+
+  .btn {
+    background-color: $nomacafe;
+    border: $nomacafe;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  h1{
+    color: white;
+    font-family: "Pacifico", serif;
+  }
+
+  h6 {
+    color: #DA7979;
+  }
+
+}
