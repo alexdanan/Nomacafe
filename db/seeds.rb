@@ -171,7 +171,7 @@ nomad_user1.save!
 
 
 nomad_user2 = User.create!(
-  email: "shstyjllad@gmail.com",
+  email: "user@nomacafe.com",
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
@@ -399,6 +399,7 @@ descriptions = [
 ]
 
 
+
 cafes = [
   {
     image_url: "https://i.pinimg.com/564x/49/d2/f6/49d2f636056ce63c3d6732c5c394f328.jpg",
@@ -521,13 +522,20 @@ end
 # the booking in there are already created and can be accessed from outside
 puts "Creating bookings and reviews!"
 
+date_array = []
+10.times do
+  new_date_time = (DateTime.now + (-5..10).to_a.sample)
+  date_array << new_date_time
+end
+
 Table.all.each do |table|
+  date = date_array.sample
   new_booking = Booking.create!(
     # Same as line 128
     user: nomad_users.sample,
     table: table,
-    start_time: DateTime.now.change({hour: start_times.sample}),
-    end_time: DateTime.now.change({hour: end_times.sample}),
+    start_time: date.change({hour: start_times.sample}),
+    end_time: date.change({hour: end_times.sample}),
     status: 1
   )
   review = reviews.sample
@@ -541,6 +549,6 @@ end
 
 puts "Created #{User.count} users"
 puts "Created #{Cafe.count} cafes"
-puts "Created #{Table.count} tables"
+puts "Created #{Table.count} tables" 
 puts "Created #{Booking.count} bookings"
 puts "Created #{Review.count} reviews"
