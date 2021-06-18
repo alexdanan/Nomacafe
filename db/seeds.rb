@@ -361,7 +361,7 @@ Table.all.each do |table|
     table: table,
     start_time: DateTime.now.change({hour: start_times.sample}),
     end_time: DateTime.now.change({hour: end_times.sample}),
-    status: (0..1).to_a.sample
+    status: 1
   )
   review = reviews.sample
   # For every table we aslo create a review
