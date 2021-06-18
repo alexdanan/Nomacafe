@@ -36,7 +36,12 @@ class PagesController < ApplicationController
       @reviews = @user_cafe.reviews
 
 
-      @bookings = @user_cafe.bookings.map{|booking| {title: "#{booking.table.name} - #{booking.user.email}", start: booking.start_time.strftime("%Y-%m-%dT%H:%M:%S"), end: booking.end_time.strftime("%Y-%m-%dT%H:%M:%S")}}
+      @bookings = @user_cafe.bookings.map{ |booking| {
+        title: "#{booking.table.name} - @#{booking.user.user_name}",
+        start: booking.start_time.strftime("%Y-%m-%dT%H:%M:%S"),
+        end: booking.end_time.strftime("%Y-%m-%dT%H:%M:%S"),
+        # image_url: helpers.cl_image_path(booking.table.user.photo.key)
+      }}
 
       credits_range = @tables&.map do |t|
         t.min_credits
