@@ -113,10 +113,7 @@
           </li>
         <% else %>
           <li>
-            <a> <%= link_to "I'm a Nomad", dashboard_path(user_type: "nomad")  %> </a>
-          </li>
-          <li>
-            <a> <%= link_to "I'm a Café", dashboard_path(user_type: "cafe")  %> </a>
+            <a> <%= link_to "I'm a Nomad", dashboard_path(user_type: "nomad")  %> </a> || <a> <%= link_to "I'm a Café", dashboard_path(user_type: "cafe")  %> </a>
           </li>
         <% end %>
       </ul>
