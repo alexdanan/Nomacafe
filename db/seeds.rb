@@ -34,7 +34,7 @@ res = JSON.parse(res.body)
 
 usernames = ["thedeparted", "sauce", "pumpkins", "composition", "greatsquare", "normanbates", "ocean", "thesting", "blackeye", "bat"]
 
-puts "Creating users!"
+puts "Creating users(cafes)!"
 
 user_cafe1 = User.create!(
   email: "adrewkin@outlook.com",
@@ -156,6 +156,8 @@ user_cafe10.photo.attach(io: file, filename: 'image.png', content_type: 'image/p
 user_cafe10.save!
 
 
+puts "Creating users(nomads)!"
+
 nomad_user1 = User.create!(
   email: "sadsgf@hotmail.com",
   password: "password",
@@ -228,7 +230,150 @@ nomad_user6.photo.attach(io: file, filename: 'image.png', content_type: 'image/p
 nomad_user6.save!
 
 
-nomad_users = [nomad_user1, nomad_user2, nomad_user3, nomad_user4, nomad_user5, nomad_user6]
+nomad_user7 = User.create!(
+  email: "hyydf@hotmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[10]["photo"])
+nomad_user1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user1.save!
+
+
+nomad_user8 = User.create!(
+  email: "shsttyd@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[11]["photo"])
+nomad_user2.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user2.save!
+
+
+nomad_user9 = User.create!(
+  email: "shtyd@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[12]["photo"])
+nomad_user3.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user3.save!
+
+
+nomad_user10 = User.create!(
+  email: "setyeestad@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[13]["photo"])
+nomad_user4.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user4.save!
+
+
+nomad_user11 = User.create!(
+  email: "shertylad@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[14]["photo"])
+nomad_user5.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user5.save!
+
+
+nomad_user12 = User.create!(
+  email: "shrtyryd@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[15]["photo"])
+nomad_user6.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user6.save!
+
+nomad_user13 = User.create!(
+  email: "sadreyf@hotmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[10]["photo"])
+nomad_user1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user1.save!
+
+
+nomad_user14 = User.create!(
+  email: "sherylad@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[11]["photo"])
+nomad_user2.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user2.save!
+
+
+nomad_user15 = User.create!(
+  email: "swrehd@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[12]["photo"])
+nomad_user3.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user3.save!
+
+
+nomad_user16 = User.create!(
+  email: "shwerastad@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[13]["photo"])
+nomad_user4.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user4.save!
+
+
+nomad_user17 = User.create!(
+  email: "shawerad@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[14]["photo"])
+nomad_user5.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user5.save!
+
+
+nomad_user18 = User.create!(
+  email: "sasfayd@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  nomacafe_type: "nomad"
+)
+file = URI.open(res[15]["photo"])
+nomad_user6.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user6.save!
+
+
+nomad_users = [nomad_user1, nomad_user2, nomad_user3, nomad_user4, nomad_user5, nomad_user6, nomad_user7, nomad_user8, nomad_user9, nomad_user10, nomad_user11, nomad_user12, nomad_user13, nomad_user14, nomad_user15, nomad_user16, nomad_user17, nomad_user18]
 
 
 # barrios = [
