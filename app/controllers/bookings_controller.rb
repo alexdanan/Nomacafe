@@ -13,6 +13,10 @@ class BookingsController < ApplicationController
       authorize @booking
       #TODO: comment this in when tis fixed
     end
+
+    def edit
+      @booking = Booking.find(params[:id])
+    end
   
     def new
       @booking = Booking.new
