@@ -35,6 +35,7 @@ export default class extends Controller {
         right: 'dayGridMonth,timeGridWeek,listWeek'
       },
       events: bookings
+
     });
 
     calendar.render();
