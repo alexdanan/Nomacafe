@@ -17,6 +17,10 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    true
+  end
+
   def destroy?
     user.admin || record.user == user
   end

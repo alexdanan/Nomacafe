@@ -25,6 +25,12 @@ require "open-uri"
 # new_one.photo.attach(file)
 # user_cafe.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 # user_cafe.save!
+headers = { "X-API-KEY": "CE4F350C-B88643FB-9C69B4CE-5194249D" }
+res = HTTParty.get(
+  "https://uifaces.co/api?limit=16&emotion[]=happiness",
+  headers: headers
+)
+res = JSON.parse(res.body)
 
 usernames = ["thedeparted", "sauce", "pumpkins", "composition", "greatsquare", "normanbates", "ocean", "thesting", "blackeye", "bat"]
 
@@ -37,8 +43,9 @@ user_cafe1 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "cafe"
 )
-# user_cafe1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe1.save!
+file = URI.open(res[0]["photo"])
+user_cafe1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+user_cafe1.save!
 
 
 user_cafe2 = User.create!(
@@ -48,8 +55,9 @@ user_cafe2 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "cafe"
 )
-# user_cafe2.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe2.save!
+file = URI.open(res[1]["photo"])
+user_cafe2.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+user_cafe2.save!
 
 
 user_cafe3 = User.create!(
@@ -59,8 +67,9 @@ user_cafe3 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "cafe"
 )
-# user_cafe3.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe3.save!
+file = URI.open(res[2]["photo"])
+user_cafe3.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+user_cafe3.save!
 
 
 user_cafe4 = User.create!(
@@ -70,8 +79,9 @@ user_cafe4 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "cafe"
 )
-# user_cafe4.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe4.save!
+file = URI.open(res[3]["photo"])
+user_cafe4.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+user_cafe4.save!
 
 
 user_cafe5 = User.create!(
@@ -81,8 +91,9 @@ user_cafe5 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "cafe"
 )
-# user_cafe5.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe5.save!
+file = URI.open(res[4]["photo"])
+user_cafe5.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+user_cafe5.save!
 
 
 user_cafe6 = User.create!(
@@ -92,8 +103,9 @@ user_cafe6 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "cafe"
 )
-# user_cafe6.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe6.save!
+file = URI.open(res[5]["photo"])
+user_cafe6.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+user_cafe6.save!
 
 
 user_cafe7 = User.create!(
@@ -103,8 +115,9 @@ user_cafe7 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "cafe"
 )
-# user_cafe7.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe7.save!
+file = URI.open(res[6]["photo"])
+user_cafe7.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+user_cafe7.save!
 
 
 user_cafe8 = User.create!(
@@ -114,8 +127,9 @@ user_cafe8 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "cafe"
 )
-# user_cafe8.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe8.save!
+file = URI.open(res[7]["photo"])
+user_cafe8.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+user_cafe8.save!
 
 
 user_cafe9 = User.create!(
@@ -125,8 +139,9 @@ user_cafe9 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "cafe"
 )
-# user_cafe9.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe9.save!
+file = URI.open(res[8]["photo"])
+user_cafe9.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+user_cafe9.save!
 
 
 user_cafe10 = User.create!(
@@ -136,8 +151,9 @@ user_cafe10 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "cafe"
 )
-# user_cafe10.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe10.save!
+file = URI.open(res[9]["photo"])
+user_cafe10.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+user_cafe10.save!
 
 
 nomad_user1 = User.create!(
@@ -147,8 +163,9 @@ nomad_user1 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "nomad"
 )
-# nomad_user1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# nomad_user1.save!
+file = URI.open(res[10]["photo"])
+nomad_user1.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user1.save!
 
 
 nomad_user2 = User.create!(
@@ -158,8 +175,9 @@ nomad_user2 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "nomad"
 )
-# nomad_user2.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# nomad_user2.save!
+file = URI.open(res[11]["photo"])
+nomad_user2.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user2.save!
 
 
 nomad_user3 = User.create!(
@@ -169,8 +187,9 @@ nomad_user3 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "nomad"
 )
-# nomad_user3.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# nomad_user3.save!
+file = URI.open(res[12]["photo"])
+nomad_user3.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user3.save!
 
 
 nomad_user4 = User.create!(
@@ -180,8 +199,9 @@ nomad_user4 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "nomad"
 )
-# nomad_user4.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# nomad_user4.save!
+file = URI.open(res[13]["photo"])
+nomad_user4.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user4.save!
 
 
 nomad_user5 = User.create!(
@@ -191,8 +211,9 @@ nomad_user5 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "nomad"
 )
-# nomad_user5.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# nomad_user5.save!
+file = URI.open(res[14]["photo"])
+nomad_user5.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user5.save!
 
 
 nomad_user6 = User.create!(
@@ -202,8 +223,9 @@ nomad_user6 = User.create!(
   user_name: usernames.sample,
   nomacafe_type: "nomad"
 )
-# nomad_user6.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# nomad_user6.save!
+file = URI.open(res[15]["photo"])
+nomad_user6.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+nomad_user6.save!
 
 
 nomad_users = [nomad_user1, nomad_user2, nomad_user3, nomad_user4, nomad_user5, nomad_user6]
@@ -361,7 +383,7 @@ Table.all.each do |table|
     table: table,
     start_time: DateTime.now.change({hour: start_times.sample}),
     end_time: DateTime.now.change({hour: end_times.sample}),
-    status: (0..1).to_a.sample
+    status: 1
   )
   review = reviews.sample
   # For every table we aslo create a review

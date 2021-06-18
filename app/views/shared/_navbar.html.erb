@@ -34,7 +34,7 @@
   </div>
 </div> -->
 
-
+<% if user_signed_in? %>
 
   <!--[+] HEADER -->
   <nav class="header-nav">
@@ -90,7 +90,7 @@
       </label>
       <ul>
         <li>
-          <a> <%= link_to 'Account', dashboard_path  %> </a>
+          <a> <%= link_to 'Account', user_path(current_user)  %> </a>
         </li>
         <li>
           <a> <%= link_to "Favourites", favourites_path%> </a>
@@ -107,35 +107,38 @@
         <li>
           <a> <%= link_to "Help & FAQ", cafes_path  %> </a>
         </li>
-        <% if user_signed_in? %>
+
           <li>
-            <a> <%= link_to "Logout", cafes_path  %> </a>
+            <a> <%= link_to "Logout", destroy_user_session_path, method: :delete  %> </a>
           </li>
-        <% else %>
-          <li>
-            <a> <%= link_to "I'm a Nomad", dashboard_path(user_type: "nomad")  %> </a>
-          </li>
-          <li>
-            <a> <%= link_to "I'm a Café", dashboard_path(user_type: "cafe")  %> </a>
-          </li>
-        <% end %>
+
+
+           <!--  <a> <%= link_to "I'm a Nomad", dashboard_path(user_type: "nomad")  %> </a> || <a> <%= link_to "I'm a Café", dashboard_path(user_type: "cafe")  %> </a> -->
+
+
       </ul>
     </div>
   </div>
   <!--[-] BURGER MENU -->
 
+  <% if current_page?(dashboard_path) %>
     <a href="/cafes"><i class="fas fa-search"></i></a>
 
+  <% else %>
     <a href="/dashboard"><i class="fas fa-calendar-alt"></i></a>
+  <% end %>
+
 
 
   <!--[+] PROFILE AVATAR-->
   <div class="profile-hedader">
     <div class="profile-thumb">
       <div class="thumb" style="background:url('https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
-      <div class="profile-name">@Genrik</div>
+      <div class="profile-name">@<%= current_user.user_name %></div>
     </div>
   </div>
+
+
   <!--[-] PROFILE AVATAR-->
   <!--[+] BELL NOTIFICATION -->
   <div class="header-bell">
@@ -187,3 +190,4 @@
   <!--[-] BELL NOTIFICATION -->
   </nav>
   <!--[-] HEADER -->
+  <% end %>

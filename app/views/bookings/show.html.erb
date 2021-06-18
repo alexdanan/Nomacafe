@@ -9,6 +9,7 @@
         finishing <%=@booking.end_time.strftime("at %I:%M%p")%>
         Booking status: <%=@booking.status%></p>
         </em>
+        <%=link_to 'Edit it', edit_booking_path, class: "btn btn-primary btn-block"%>
         <%=link_to 'Go To Dashboard', dashboard_path, class: "btn btn-primary btn-block"%>
   </div>
 </div>
