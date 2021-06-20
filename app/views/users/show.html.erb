@@ -66,7 +66,7 @@
 
         <div class="card-trip-infos">
           <div>
-            <h2> <%= link_to "#{cafe.name}", cafe_path(cafe), target: :_blank %></h2>
+            <h2> <%= link_to "#{cafe.name}", cafe_path(cafe) %></h2>
             <p> <%= cafe.location %></p>
           </div>
           <p class="card-trip-pricing"><small>Minimim credits applied: <%=cafe.credits_range %></small></p>
@@ -78,6 +78,26 @@
 
   <div data-toggle3tabs-target="tab3content">
     <h2>Your Reviews</h2>
+    <ul>
+      <% @user_reviews[0].each do |review| %>
+
+        <li>
+          <% review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+
+          <div class="review-counter">
+               <%= review.content %>
+          </div>
+          <div class="link">
+            <% if review.booking.user == current_user %>
+              <%= link_to 'Delete', review_path(review), method: :delete  %>
+            <% end %>
+         </div>
+        </li>
+      <% end -%>
+    </ul>
+
   </div>
 
 
