@@ -43,20 +43,6 @@ class PagesController < ApplicationController
         # image_url: helpers.cl_image_path(booking.table.user.photo.key)
       }}
 
-      credits_range = @tables&.map do |t|
-        t.min_credits
-      end
-
-      min_credits = credits_range&.min
-      max_credits = credits_range&.max
-
-      if min_credits == max_credits
-        @user_cafe_credits = "#{min_credits}€/h/table"
-      else
-        @user_cafe_credits ="from #{min_credits}€ to #{max_credits}€ /h/table
-        (dependent on table size)"
-      end
-
 
     end
 
@@ -65,8 +51,7 @@ class PagesController < ApplicationController
   def nomad_community
     @nomads = User.where(nomacafe_type: "nomad")
     @new_fav = Favourite.new
-  end
-
-  def destroy_nomad
+    @user = current_user
+    @fav_nomads = @user.favourite_users
   end
 end

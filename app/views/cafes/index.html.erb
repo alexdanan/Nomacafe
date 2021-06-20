@@ -1,8 +1,8 @@
-<div data-controller="tabsindex">
+<div data-controller="togglemaplist">
 
-  <div class="map-list-btn"><div class="btn-map" data-action="click->tabsindex#map" data-tabsindex-target="tabmap"> Map</div> <div class ="btn-list" data-action="click->tabsindex#list" data-tabsindex-target="tablist"> List </div></div>
+  <div class="map-list-btn"><div class="btn-map" data-action="click->togglemaplist#tab1cont" data-togglemaplist-target="tab1"> Map</div> <div class ="btn-list" data-action="click->togglemaplist#tab2cont" data-togglemaplist-target="tab2"> List </div></div>
 
-  <div class="map-view" data-tabsindex-target="maptar">
+  <div class="map-view" data-togglemaplist-target="tab1content">
     <div id="map"
          style="width: 100%; height: 1000px;"
          data-markers="<%= @markers.to_json%>"
@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div id="list-view" data-tabsindex-target="listtar">
+  <div id="list-view" data-togglemaplist-target="tab2content">
     <% @cafes.each do |cafe| %>
       <div class="card-trip">
         <% if cafe.photo.attached? %>
@@ -24,7 +24,7 @@
             <h2> <%= link_to "#{cafe.name}", cafe_path(cafe) %></h2>
             <p> <%= cafe.location %></p>
           </div>
-          <h2 class="card-trip-pricing">Minimim credits applied: <%=@cafe_credits  %></h2>
+          <p class="card-trip-pricing"><small>Minimum credits applied: <%=cafe.credits_range  %></small></p>
         </div>
       </div>
     <% end %>

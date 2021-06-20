@@ -14,21 +14,6 @@ class CafesController < ApplicationController
       link: "/cafes/#{cafe}"
       }
     end
-
-    # @cafes.each do |cafe|
-    #   tables = cafe.tables
-    #   credits_range = @tables.map do |t|
-    #   t.min_credits
-    #   end
-    #   min_credits = credits_range.min
-    #   max_credits = credits_range.max
-
-    #   if min_credits == max_credits
-    #     @cafe_credits = "#{min_credits}€/h/table"
-    #   else
-    #     @cafe_credits ="from #{min_credits}€ to #{max_credits}€ /h/table (dependent on table size)"
-    #   end
-    # end
   end
 
 
@@ -38,23 +23,21 @@ class CafesController < ApplicationController
     authorize @cafe
     authorize @tables
 
-    credits_range = @tables.map do |t|
-      t.min_credits
-    end
-
-    min_credits = credits_range.min
-    max_credits = credits_range.max
-
-    if min_credits == max_credits
-      @cafe_credits = "#{min_credits}€/h/table"
-    else
-      @cafe_credits ="from #{min_credits}€ to #{max_credits}€ /h/table (dependent on table size)"
-    end
-
     @user_reviews = @cafe.reviews.select { |review| review.booking.user == current_user }
+
+    unless @user_reviews.empty?
+      @average_user_rating = average_rating(@user_reviews)
+    end
+
+
     @other_reviews = @cafe.reviews.select { |review| review.booking.user != current_user }
     @reviews = @user_reviews + @other_reviews
+
+
+    @new_fav = Favourite.new
   end
+
+
 
   def new
     @cafe = Cafe.new
@@ -102,6 +85,14 @@ class CafesController < ApplicationController
 
   params.require(:cafe).permit(:name, :location, :photo)
 
+  end
+
+  def average_rating(reviews)
+    ratings = reviews.map do |review|
+      review.rating
+    end
+    verdict = ratings.inject { |sum, el| sum + el }.to_f / ratings.size
+    verdict.round(2)
   end
 
 end

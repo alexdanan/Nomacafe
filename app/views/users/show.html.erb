@@ -1,12 +1,16 @@
 <div class="card-trip">
   <% if @user.photo.attached? %>
     <%= cl_image_tag(@user.photo.key,
-        width: 400, height: 300, crop: :fill) %>
+        width: 400, height: 300, crop: :fill, q_auto: :good) %>
     <% else %>
     <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' />
     <% end %>
+
+    <div class="card-trip-infos">
+      <h2> @<%= @user.user_name %></h2>
+    </div>
 </div>
-<div class="d-flex-column col-lg-3 col-sm-6">
+<!-- <div class="d-flex-column col-lg-3 col-sm-6">
   <h2>Basic information</h2>
    <div class="p-2"><p><strong>Full Name</strong></p></div>
    <div class="p-2"><p> <%= @user.user_name %>  </p></div>
@@ -16,4 +20,85 @@
   <p>Change password</p>
 
   <h2>Favorite Cafés</h2>
+</div> -->
+
+
+<div data-controller="toggle3tabs">
+
+  <div class=cafe-tabs>
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <div data-action="click->toggle3tabs#tab1cont" class="tab-underlined" data-toggle3tabs-target="tab1">Info</div>
+      </li>
+      <li>
+        <div data-action="click->toggle3tabs#tab2cont" class="tab-underlined" data-toggle3tabs-target="tab2">Favourite Cafes</div>
+      </li>
+      <li>
+        <div data-action="click->toggle3tabs#tab3cont" class="tab-underlined" data-toggle3tabs-target="tab3">Cafe Reviews</div>
+      </li>
+    </ul>
+ </div>
+
+
+
+  <div data-toggle3tabs-target="tab1content">
+    <div class="d-flex-column col-lg-3 col-sm-6">
+      <h2>Basic information</h2>
+       <div class="p-2"><p><strong>Full Name</strong></p></div>
+       <div class="p-2"><p> <%= @user.user_name %>  </p></div>
+       <div class="p-2"><p><strong>Email</strong></p></div>
+      <p> <%= @user.email %> </p>
+       <div class="p-2"><p><strong>Password</strong></p></div>
+      <p>Change password</p>
+    </div>
+
+  </div>
+
+
+  <div class="cafe-tables" data-toggle3tabs-target="tab2content">
+    <% @user.favourite_cafes.each do |cafe| %>
+      <div class="card-trip">
+        <% if cafe.photo.attached? %>
+          <img src="<%= cl_image_path cafe.photo.key %>" />
+        <% else %>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <% end %>
+
+        <div class="card-trip-infos">
+          <div>
+            <h2> <%= link_to "#{cafe.name}", cafe_path(cafe) %></h2>
+            <p> <%= cafe.location %></p>
+          </div>
+          <p class="card-trip-pricing"><small>Minimim credits applied: <%=cafe.credits_range %></small></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div data-toggle3tabs-target="tab3content">
+    <h2>Your Reviews</h2>
+    <ul>
+      <% @user_reviews[0].each do |review| %>
+
+        <li>
+          <% review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+
+          <div class="review-counter">
+               <%= review.content %>
+          </div>
+          <div class="link">
+            <% if review.booking.user == current_user %>
+              <%= link_to 'Delete', review_path(review), method: :delete  %>
+            <% end %>
+         </div>
+        </li>
+      <% end -%>
+    </ul>
+
+  </div>
+
+
 </div>
