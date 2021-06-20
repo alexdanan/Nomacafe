@@ -5,6 +5,7 @@ class FavouritesController < ApplicationController
     @user = current_user
     @nomads = @user.favourite_users
     @cafes = @user.favourite_cafes
+
   end
 
 
@@ -21,10 +22,13 @@ class FavouritesController < ApplicationController
   def create
     @new_fav = Favourite.new(fav_params)
     @new_fav.user = current_user
-    @new_fav.save!
-
-    redirect_to nomad_community_path
-
+    if @new_fav.save!
+      if @new_fav.favouritable_type == "User"
+        redirect_to nomad_community_path, notice: "Nomad has been added to your favourites!"
+      else
+        redirect_to cafe_path(@new_fav.favouritable_id), notice: "Cafe has been added to your favourites!"
+      end
+    end
 
 
 
@@ -33,7 +37,11 @@ class FavouritesController < ApplicationController
   def destroy
     @fav = Favourite.find_by(favouritable_id: params[:id])
     @fav.destroy
-    redirect_to nomad_community_path, notice: "Nomad has been removed from your favourites"
+    if @fav.favouritable_type == "User"
+      redirect_to nomad_community_path, notice: "Nomad has been removed from your favourites"
+    else
+      redirect_to cafe_path(@fav.favouritable_id), notice: "Cafe has been removed from your favourites!"
+    end
   end
 
   private

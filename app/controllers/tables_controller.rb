@@ -47,13 +47,13 @@ class TablesController < ApplicationController
     @table = Table.find(params[:id])
     authorize @table
     @table.destroy
-    redirect_to cafe_path(@table.cafe)
+    redirect_to dashboard_path
   end
 
   private
 
   def table_params
-    params.require(:table).permit(:name, :spots, :min_credits, :seat, :cafe_id)
+    params.require(:table).permit(:name, :spots, :min_credits, :seat, :wifi, :outlet, :outside, :cafe_id)
   end
 
 end

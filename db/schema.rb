@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_18_143831) do
+ActiveRecord::Schema.define(version: 2021_06_20_144319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,9 @@ ActiveRecord::Schema.define(version: 2021_06_18_143831) do
     t.bigint "cafe_id", null: false
     t.string "seat"
     t.string "name"
+    t.boolean "outside", default: false
+    t.boolean "outlet", default: true
+    t.boolean "wifi", default: true
     t.index ["cafe_id"], name: "index_tables_on_cafe_id"
   end
 

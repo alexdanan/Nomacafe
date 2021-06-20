@@ -10,25 +10,25 @@
           <h2> <%= @user_cafe.name %></h2>
           <p> <%= @user_cafe.location %></p>
         </div>
-        <p class="card-trip-pricing">Minimim credits applied: <%=@user_cafe_credits  %></p>
+        <p class="card-trip-pricing">Minimim credits applied: <%=@user_cafe.credits_range  %></p>
       </div>
     </div>
 
-<div data-controller="tabsdash">
+<div data-controller="toggle4tabs">
 
   <div class=cafe-tabs>
     <ul class="list-inline tabs-underlined">
       <li>
-        <div data-action="click->tabsdash#bookingstab" class="tab-underlined" data-tabsdash-target="tabbook">Bookings</div>
+        <div data-action="click->toggle4tabs#tab1cont" class="tab-underlined" data-toggle4tabs-target="tab1">Bookings</div>
       </li>
       <li>
-        <div data-action="click->tabsdash#tablestab" class="tab-underlined" data-tabsdash-target="tabtables">Tables</div>
+        <div data-action="click->toggle4tabs#tab2cont" class="tab-underlined" data-toggle4tabs-target="tab2">Tables</div>
       </li>
       <li>
-        <div data-action="click->tabsdash#reviewstab" class="tab-underlined" data-tabsdash-target="tabreviews">Reviews</div>
+        <div data-action="click->toggle4tabs#tab3cont" class="tab-underlined" data-toggle4tabs-target="tab3">Reviews</div>
       </li>
       <li>
-        <div data-action="click->tabsdash#transactionstab" class="tab-underlined" data-tabsdash-target="tabtransactions">Transactions</div>
+        <div data-action="click->toggle4tabs#tab4cont" class="tab-underlined" data-toggle4tabs-target="tab4">Transactions</div>
       </li>
     </ul>
  </div>
@@ -37,7 +37,7 @@
 
 <!-- CAFE_BOOKINGS TAB -->
 
-<div data-tabsdash-target="cafebookings" class = "calendar-js" data-controller="calendar">
+<div data-toggle4tabs-target="tab1content" class = "calendar-js" data-controller="calendar">
   <div id = "calendar" data-calendar-target="element" data-bookings="<%= @bookings.to_json%>">
 
   </div>
@@ -48,32 +48,32 @@
 <!-- CAFE_TABLES TAB -->
 
 
-<div class="cafe-tables" data-tabsdash-target="cafetables">
-<ul>
+  <div class="cafe-tables" data-toggle4tabs-target="tab2content">
+  <ul>
 
 
-  <% @tables.each do |table| %>
-    <li>
-  <h5><%= table.name %></h5>
+    <% @tables.each do |table| %>
+      <li>
+    <h5><%= table.name %></h5>
 
-      <p> <strong>Number of Spots: </strong> <%= table.spots %>
-          <strong>Type of Seats: </strong> <%= table.seat %>
-          <strong>Minimum Credits: </strong><%= table.min_credits %>
+        <p> <strong>Number of Spots: </strong> <%= table.spots %>
+            <strong>Type of Seats: </strong> <%= table.seat %>
+            <strong>Minimum Credits: </strong><%= table.min_credits %>
 
-       </p>
+         </p>
 
-      <p><%= link_to "Edit Table", edit_cafe_table_path(table.cafe_id, table), remote:true %></p>
-      <p> <%= link_to "Delete Table", [table.cafe, table], method: :delete, remote:true %></p>
-    </li>
-  <% end %>
-</ul>
-<p><%= link_to "Add a new table", new_cafe_table_path(@user_cafe), remote:true %></p>
-</div>
-
-
+        <p><%= link_to "Edit Table", edit_cafe_table_path(table.cafe_id, table) %></p>
+        <p> <%= link_to "Delete Table", [table.cafe, table], method: :delete %></p>
+      </li>
+    <% end %>
+  </ul>
+  <p><%= link_to "Add a new table", new_cafe_table_path(@user_cafe) %></p>
+  </div>
 
 
-  <div data-tabsdash-target="cafereviews">
+
+
+  <div data-toggle4tabs-target="tab3content">
 
     <% @reviews.each do |rev| %>
       <ul>
@@ -93,10 +93,10 @@
   </div>
 
 
-<div data-tabsdash-target="cafetransactions">
-<h2>Current Balance: <%= @user_cafe.owed_money%>€ (paid at month end)</h2>
-<p>(paid at month end)</p>
+  <div data-toggle4tabs-target="tab4content">
+  <h2>Current Balance: <%= @user_cafe.owed_money%>€ (paid at month end)</h2>
+  <p>(paid at month end)</p>
 
-</div>
+  </div>
 
 </div>

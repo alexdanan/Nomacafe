@@ -397,6 +397,9 @@ descriptions = [
   "Table by the stalls", 
   "Table with sunlight"
 ]
+wifi = [true, false]
+outlet = [true, false]
+outside = [true, false]
 
 
 
@@ -512,7 +515,10 @@ cafes.each do |cafe|
       spots: seating.sample,
       min_credits: min_debt.sample,
       seat: Table::SEAT.sample,
-      name: descriptions.sample
+      name: descriptions.sample,
+      wifi: wifi.sample,
+      outlet: outlet.sample,
+      outside: outside.sample
     )
   end
 end

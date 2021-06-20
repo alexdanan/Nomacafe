@@ -12,4 +12,31 @@ class Cafe < ApplicationRecord
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  def average_rating
+    ratings = self.reviews.map do |review|
+      review.rating
+    end
+    verdict = ratings.inject { |sum, el| sum + el }.to_f / ratings.size
+    verdict.round(2)
+  end
+
+  def credits_range
+    tables = self.tables
+    credits_range = tables.map do |t|
+      t.min_credits
+    end
+
+    min_credits = credits_range.min
+    max_credits = credits_range.max
+
+    if min_credits == max_credits
+      @cafe_credits = "#{min_credits}€/h/table"
+    else
+      @cafe_credits ="from #{min_credits}€ to #{max_credits}€ /h/table (dependent on table size)"
+    end
+    return @cafe_credits
+
+  end
+
 end
