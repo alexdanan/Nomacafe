@@ -4,5 +4,4 @@ class Table < ApplicationRecord
   has_many :bookings, dependent: :destroy
   validates :spots, :min_credits, presence: true
   validates :seat, inclusion: {in: SEAT}
-  monetize :price_cents
 end
