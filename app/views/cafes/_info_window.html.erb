@@ -1,6 +1,13 @@
 <!-- app/views/flats/_info_window.html.erb -->
-<div style="background-image: url('<%= cl_image_path cafe.photo.key, q_auto: :good %>')" class="map-window">
+<div class="map-window">
+  <a href="<%= cafe_path(cafe) %>">
+  <div style="background-image:url('<%= cl_image_path cafe.photo.key, q_auto: :good %>')" class="">
+
+ 
+  </div>
+
   <h2><%= cafe.name%></h2>
   <p><%= cafe.location%></p>
-  <button> <%= link_to "Book Now", cafe_path(cafe) %></button>
+
+    </a>
 </div>

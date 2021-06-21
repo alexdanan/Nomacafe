@@ -11,25 +11,46 @@
   </div>
 
   <div id="list-view" data-togglemaplist-target="tab2content">
-    <% @cafes.each do |cafe| %>
-      <div class="card-trip">
+    <div class="app-list">
+      <% @cafes.each do |cafe| %>
+      <div class="cafe-card">
         <% if cafe.photo.attached? %>
-          <img src="<%= cl_image_path cafe.photo.key %>" />
-        <% else %>
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <% end %>
 
-        <div class="card-trip-infos">
-          <div>
-            <h2> <%= link_to "#{cafe.name}", cafe_path(cafe) %></h2>
-            <p> <%= cafe.location %></p>
+        <div class="thumb" style="background:url('<%= cl_image_path cafe.photo.key %>');">
+          <% else %>
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% end %>
+          <button type="button" name="button">S</button>
+          <span class="thumb-small-card" style="background:url('https://99designs-blog.imgix.net/blog/wp-content/uploads/2019/10/attachment_103367090-e1571110045215.jpg?auto=format&q=60&fit=max&w=930');"></span>
+        </div>
+        <div class="cafe-description">
+          <h2><%= link_to "#{cafe.name}", cafe_path(cafe) %></h2>
+          <p><%= cafe.location %></p>
+          <!-- <p>Minimum credits applied: <%=cafe.credits_range  %></p> -->
+        </div>
+        <div class="cafe-footer">
+          <div class="avatars">
+            <span class="avatar-thumb" style="background:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80');"></span>
+            <span class="avatar-thumb" style="background:url('https://images.unsplash.com/photo-1610431205421-739e027cc0ce?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80');"></span>
+
           </div>
-          <p class="card-trip-pricing"><small>Minimum credits applied: <%=cafe.credits_range  %></small></p>
+          <div class="likes">
+            <div class="title">
+              <span>RECOMENDED BY</span>
+            </div>
+            <div class="likes-contaienrs">
+              <span>Melis James,</span>
+              <span>Boris Petrovich</span>
+              <span>40 others</span>
+            </div>
+          </div>
+          <div class="button-cafe-card">
+            <button type="button" name="button">Book</button>
+          </div>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
 </div>
-
-
