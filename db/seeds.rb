@@ -1,4 +1,3 @@
-
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -561,13 +560,13 @@ end
 puts "Creating Packages"
 
 Package.create!(
-  name: "Frapuccino",
+  name: "Frappuccino",
   credits: 200,
   fee: 15,
   price: 215
   )
 Package.create!(
-  name: "Capuccino",
+  name: "Cappuccino",
   credits: 100,
   fee: 10,
   price: 110

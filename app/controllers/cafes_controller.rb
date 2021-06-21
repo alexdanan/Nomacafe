@@ -10,7 +10,7 @@ class CafesController < ApplicationController
       lat: cafe.latitude,
       lng: cafe.longitude,
       info_window: render_to_string(partial: "info_window", locals: { cafe: cafe }), #optional
-      image_url: helpers.asset_url("https://res.cloudinary.com/sassia93/image/upload/v1623958155/cup_makqh2.svg"),
+      image_url: helpers.asset_url("https://res.cloudinary.com/sassia93/image/upload/v1624307846/cup_3_jfjzkq.png"),
       link: "/cafes/#{cafe}"
       }
     end

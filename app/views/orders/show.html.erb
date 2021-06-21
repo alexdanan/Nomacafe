@@ -9,7 +9,8 @@
         <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
         </li>
       </ul>
-      <p>Use your credits at one of our selected <strong>Cafes</strong></p>
+      <p>Use your credits at one of our selected <strong><%= link_to "Cafes", cafes_path  %></strong></p>
+      <%= link_to "See all orders", packages_path  %>
     </div>
   </div>
 </div>

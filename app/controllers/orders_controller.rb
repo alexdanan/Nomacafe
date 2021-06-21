@@ -16,6 +16,9 @@ class OrdersController < ApplicationController
       cancel_url: order_url(order)
     )
 
+    Credit.create!(user: current_user, amount: order.amount)
+
+
     order.update(checkout_session_id: session.id)
     redirect_to new_order_payment_path(order)
   end
