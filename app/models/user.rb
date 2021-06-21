@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :bookings, dependent: :destroy
+  has_many :credits, dependent: :destroy
   has_one :cafe, dependent: :destroy
   has_one_attached :photo
   validates :nomacafe_type, presence: true, inclusion: {in: ["cafe", "nomad"]}

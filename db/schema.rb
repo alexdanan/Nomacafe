@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_090034) do
+ActiveRecord::Schema.define(version: 2021_06_21_202415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 2021_06_21_090034) do
     t.float "latitude"
     t.float "longitude"
     t.index ["user_id"], name: "index_cafes_on_user_id"
+  end
+
+  create_table "credits", force: :cascade do |t|
+    t.integer "amount"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_credits_on_user_id"
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -138,6 +146,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_090034) do
   add_foreign_key "bookings", "tables"
   add_foreign_key "bookings", "users"
   add_foreign_key "cafes", "users"
+  add_foreign_key "credits", "users"
   add_foreign_key "orders", "packages"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "bookings"
