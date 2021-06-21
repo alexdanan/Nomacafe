@@ -9,7 +9,7 @@ class Booking < ApplicationRecord
     "Your seat has been #{status} at #{table.cafe.name} 
     located at #{table.cafe.location}. You have a #{table.name} 
     with a #{table.seat} 
-    costing a total of €#{((table.min_credits * (end_time - start_time)) / 7200)}"
+    costing a total of €#{table.min_credits}"
   end
 
 end
