@@ -20,8 +20,8 @@ class CafesController < ApplicationController
   def show
     @booking = Booking.new
     @tables = @cafe.tables
-    authorize @cafe
-    authorize @tables
+    #authorize @cafe
+    #authorize @tables
 
     @user_reviews = @cafe.reviews.select { |review| review.booking.user == current_user }
 
@@ -41,13 +41,13 @@ class CafesController < ApplicationController
 
   def new
     @cafe = Cafe.new
-    authorize @cafe
+    #authorize @cafe
   end
 
   def create
     @cafe = Cafe.new(cafe_params)
     @cafe.user = current_user
-    authorize @cafe
+    #authorize @cafe
 
     if @cafe.save
       redirect_to dashboard, notice: "Your Cafe has been created!"
@@ -57,7 +57,7 @@ class CafesController < ApplicationController
   end
 
   def edit
-    authorize @cafe
+    #authorize @cafe
   end
 
   def update

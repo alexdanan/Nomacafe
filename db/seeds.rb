@@ -14,8 +14,13 @@ puts "Smashing all tables"
 Table.destroy_all
 puts "Destroying all cafes"
 Cafe.destroy_all
+puts"Destroying all orders"
+Order.destroy_all
+puts"Destroying all Packages"
+Package.destroy_all
 puts "Destroying all users"
 User.destroy_all
+
 
 
 
@@ -552,6 +557,36 @@ Table.all.each do |table|
     booking: new_booking
   )
 end
+
+puts "Creating Packages"
+
+Package.create!(
+  name: "Frapuccino",
+  credits: 200,
+  fee: 15,
+  price: 215
+  )
+Package.create!(
+  name: "Capuccino",
+  credits: 100,
+  fee: 10,
+  price: 110
+  )
+
+
+Package.create!(
+  name: "Expresso",
+  credits: 50,
+  fee: 7,
+  price: 57
+  )
+
+Package.create!(
+  name: "Ristretto",
+  credits: 20,
+  fee: 4,
+  price: 24
+  )
 
 puts "Created #{User.count} users"
 puts "Created #{Cafe.count} cafes"
