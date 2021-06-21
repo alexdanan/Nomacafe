@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'packages/index'
   devise_for :users
   root to: 'pages#home'
   get "dashboard", to: "pages#dashboard"
@@ -22,5 +23,10 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:show]
   resources :reviews, only: [:destroy]
   resources :users, only: [:show]
+  resources :packages, only: [:index]
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end
 

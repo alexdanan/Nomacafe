@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :favourite_users, source: :favouritable, source_type: "User", through: :favourites, foreign_key: :favouritable_id
 
   has_many :favourites_as_favouritable, class_name:"Favourite", as: :favouritable
+  has_many :orders
 
 
   def is_cafe_owner?

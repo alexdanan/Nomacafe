@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   def new
     @booking = Booking.find(params[:booking_id])
     @review = Review.new
-    authorize @review
+    #authorize @review
   end
 
   def create
@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     cafe = @booking.table.cafe
     @review = Review.new(review_params)
     @review.booking_id = @booking.id
-    authorize @review
+    #authorize @review
     if @review.save
       redirect_to cafe_path(cafe)
     else
@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    authorize @review
+    #authorize @review
     @review.destroy
     redirect_to cafe_path(@review.booking.table.cafe)
   end
