@@ -33,7 +33,13 @@ res = HTTParty.get(
 res = JSON.parse(res.body)
 
 usernames = ["thedeparted", "sauce", "pumpkins", "composition", "greatsquare", "normanbates", "ocean", "thesting", "blackeye", "bat"]
-
+fullnames = ["Carl Ely", "Matei Lanzo", "Áedán Caryl", "Zekharyah Gunnhildr", "Sitti Regine", "Nigul Nurullah", "Georg Ingrid", "Goldie Sara", "Aelia Beata", "Rickie Mathis", "Johnathan Kleio", "Lúcia Belma", "Meinard Satan"]
+description = [
+"Hello fellow humans, it is I ${completely_real_human_name}, a completely normal, average, and very human earthling, with no ill intentions of ANY kind. I enjoy human things, like oxygen intake, H20 consumption, the subjugation of inferior races, and programming. Bring me to your leader.",
+"I, self made entrepeneur extraordinare, conosseur of the coding arts and other french words, invite you all (as long as you pay) to bask in the glory of my everlasting (as long as i don't get tired) pressence and genius as I proceed to display the magic of my coding skills and aid you on your endeavours (for payment ofcourse).",
+"Hello world, searching to meet up and kick programming butt? Finding me is easy, just picture an image of a confident, skilled, tall, blonde hottie. Got it? Cool, now picture the exact opposite and you'll probably find me sulking in the corner of my usual cafés, typing through tears.",
+"Lorem ipsum dolor sike you thought. You really believed I was just filler text didn't ya? Rookie mistake I tell you, for starters, this is a super real profile page and description, who could forget to delete such an obious placeholder? Lucky for you, I'm always around to help out with any and all coding questions, my kindness truly knows no bounds."
+]
 puts "Creating users(cafes)!"
 
 user_cafe1 = User.create!(
@@ -41,6 +47,8 @@ user_cafe1 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "cafe"
 )
 file = URI.open(res[0]["photo"])
@@ -53,6 +61,8 @@ user_cafe2 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "cafe"
 )
 file = URI.open(res[1]["photo"])
@@ -65,6 +75,8 @@ user_cafe3 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "cafe"
 )
 file = URI.open(res[2]["photo"])
@@ -77,6 +89,8 @@ user_cafe4 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "cafe"
 )
 file = URI.open(res[3]["photo"])
@@ -89,6 +103,8 @@ user_cafe5 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "cafe"
 )
 file = URI.open(res[4]["photo"])
@@ -101,6 +117,8 @@ user_cafe6 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "cafe"
 )
 file = URI.open(res[5]["photo"])
@@ -113,6 +131,8 @@ user_cafe7 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "cafe"
 )
 file = URI.open(res[6]["photo"])
@@ -125,6 +145,8 @@ user_cafe8 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "cafe"
 )
 file = URI.open(res[7]["photo"])
@@ -137,6 +159,8 @@ user_cafe9 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "cafe"
 )
 file = URI.open(res[8]["photo"])
@@ -149,6 +173,8 @@ user_cafe10 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "cafe"
 )
 file = URI.open(res[9]["photo"])
@@ -163,6 +189,8 @@ nomad_user1 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[10]["photo"])
@@ -175,6 +203,8 @@ nomad_user2 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[11]["photo"])
@@ -187,6 +217,8 @@ nomad_user3 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[12]["photo"])
@@ -199,6 +231,8 @@ nomad_user4 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[13]["photo"])
@@ -211,6 +245,8 @@ nomad_user5 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[14]["photo"])
@@ -223,6 +259,8 @@ nomad_user6 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[15]["photo"])
@@ -235,6 +273,8 @@ nomad_user7 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[10]["photo"])
@@ -247,6 +287,8 @@ nomad_user8 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[11]["photo"])
@@ -259,6 +301,8 @@ nomad_user9 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[12]["photo"])
@@ -271,6 +315,8 @@ nomad_user10 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[13]["photo"])
@@ -283,6 +329,8 @@ nomad_user11 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[14]["photo"])
@@ -295,6 +343,8 @@ nomad_user12 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[15]["photo"])
@@ -306,6 +356,8 @@ nomad_user13 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[10]["photo"])
@@ -318,6 +370,8 @@ nomad_user14 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[11]["photo"])
@@ -330,6 +384,8 @@ nomad_user15 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[12]["photo"])
@@ -342,6 +398,8 @@ nomad_user16 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[13]["photo"])
@@ -354,6 +412,8 @@ nomad_user17 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[14]["photo"])
@@ -366,6 +426,8 @@ nomad_user18 = User.create!(
   password: "password",
   password_confirmation: "password",
   user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
   nomacafe_type: "nomad"
 )
 file = URI.open(res[15]["photo"])
@@ -479,7 +541,7 @@ cafes = [
 reviews = [
   { rating: 5, content: "This is possibly the best thing that has happened to me in my entire life, I am overcome with joy." },
   { rating: 4, content: "I, Greg, approve." },
-  { rating: 2, content: "I'm pretty sure they don't was their hands in there, kinda gross." },
+  { rating: 2, content: "I'm pretty sure they don't wash their hands in there, kinda gross." },
   { rating: 5, content: "My only regret is that I can only give 5 stars instead of 10." },
   { rating: 1, content: "Awful service, I hate it here." },
   { rating: 4, content: "One of the best spots to program and chill I've ever seen" }
@@ -545,13 +607,58 @@ Table.all.each do |table|
     status: 1
   )
   review = reviews.sample
-  # For every table we aslo create a review
+  # For every table we also create a review
   Review.create!(
     rating: review[:rating], 
     content: review[:content], 
     booking: new_booking
   )
 end
+
+puts "Creating favourites"
+
+# nomad_users.each do |nomad|
+#   Favourite.create(
+#     user: nomad,
+#     favouritable_id: Cafe.first,
+#     favouritable_type: "Cafe"
+#   )
+#   Favourite.create(
+#     user: nomad,
+#     favouritable_id: Cafe.second,
+#     favouritable_type: "Cafe"
+#   )
+#   Favourite.create(
+#     user: nomad,
+#     favouritable_id: Cafe.third,
+#     favouritable_type: "Cafe"
+#   )
+#   Review.create(
+#     booking_id: Booking.first,
+#     content: "Awesome service, love it here",
+#     rating: 5
+#   )
+#   Review.create(
+#     booking_id: Booking.second,
+#     content: "They serve the tastiest coffe in the world",
+#     rating: 4
+#   )
+#   Review.create(
+#     booking_id: Booking.third,
+#     content: "Absolutely terrible service, if I could give 0 stars, I would",
+#     rating: 1
+#   )
+#   Review.create(
+#     booking_id: Booking.fourth,
+#     content: "I've fallen in love with cafes all over again thanks to this place!",
+#     rating: 5
+#   )
+#   Review.create(
+#     booking_id: Booking.fifth,
+#     content: "Meh, I've seen better",
+#     rating: 3
+#   )
+# end
 
 puts "Created #{User.count} users"
 puts "Created #{Cafe.count} cafes"
