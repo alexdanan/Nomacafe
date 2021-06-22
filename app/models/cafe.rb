@@ -33,7 +33,9 @@ class Cafe < ApplicationRecord
     if min_credits == max_credits
       @cafe_credits = "#{min_credits}€/4h slot/table"
     else
-      @cafe_credits ="from #{min_credits}€ to #{max_credits}€ /4h slot/table (dependent on table size)"
+      @cafe_credits ="from #{min_credits}€ to #{max_credits}€
+      per 4h slot/table
+      (dependent on table size)"
     end
     return @cafe_credits
 
