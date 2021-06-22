@@ -26,12 +26,11 @@ class BookingsController < ApplicationController
 
     def create
       @booking = Booking.new(booking_params)
-      @booking.status = :accepted
       @booking.user = current_user
       authorize @booking
       @booking.table = @table
       if @booking.save
-        redirect_to booking_path(@booking)
+        redirect_to edit_booking_path(@booking)
       else
         render 'tables/show'
       end

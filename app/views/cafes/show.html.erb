@@ -211,7 +211,7 @@
                   <% 7.times do |index| %>
                   <div class="slot-container">
                     <div class="slot-header">
-                      <div class="slot-data">
+                      <div class="slot-data"> 
                         <span> <%= (DateTime.now + index + 1).strftime("%A #{(DateTime.now + index + 1).day.ordinalize} of %B") %></span>
                          <span> min credits: <%= table.min_credits %>€/h</span>
                       </div>
@@ -227,15 +227,30 @@
                       <div class="time"><%= key.capitalize %></div>
                       <div class="slot-info-container">
                         <div class="slot-info-inner">
-                          <span class="spots-info">1/2 spots left - join their table</span>
+                          <span class="spots-info">
+                            <%= table.spots_left((DateTime.now + index + 1), key) %> 
+                            spot(s) left
+                            <% if table.spots_left((DateTime.now + index + 1), key).positive?%>
+                              - join the table
+                            <% end %>
+                            </span>
                           <div class="spot-nomad-info">
-                            <div class="nomad-profile">
-                              <div class="thumb" style="background:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80');"></div>
-                            </div>
-                            <span><a href="#">Check out Nomad profile(s)</a></span>
+                              <%table.bookings_by_slot((DateTime.now + index + 1), key).each do |booking|%>
+                              <div class = "nomad-profile">
+                              <%= link_to user_path booking.user do %>
+                                <div class = "thumb" style="background-image:url(<%= cl_image_path booking.user.photo.key %>)">
+                                </div>
+                              <%end%>
+                              </div>
+                              <%end%>
+                              <% if table.bookings_by_slot((DateTime.now + index + 1), key).count.positive?%>
+                                <span><a href="#" class="info">Check out Nomad profile(s)</a></span>
+                              <%end%>
                           </div>
                         </div>
+                        <%if table.spots_left((DateTime.now + index + 1), key).positive? %>
                         <%= f.check_box :slots, {multiple: true}, "#{key}_#{DateTime.now + 1}", nil %>
+                        <%end%>
                       </div>
                     </div>
                     <% end %>
