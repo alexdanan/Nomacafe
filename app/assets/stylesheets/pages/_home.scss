@@ -1,6 +1,7 @@
 // Specific CSS for your home-page
 .back-homepage-image {
-  height: 800px;
+  height: calc(100vh - 56px);
+  background-size: cover;
 
   .btn {
     background-color: $nomacafe;

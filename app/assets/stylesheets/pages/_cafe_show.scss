@@ -129,6 +129,9 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 45px;
+    .fas {
+        color: goldenrod;
+      }
 }
 .caffee-policy {
     padding-left: 20px;
@@ -153,6 +156,9 @@
 .cafe-review ul li {
     width: 50%;
 }
+.fa-star {
+    color: goldenrod;
+  }
 .tab-item .title-tab {
     padding-left: 20px;
 }

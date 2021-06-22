@@ -270,12 +270,12 @@
         </div>
         <div class="tab3 tab-review tab-item">
           <!--[+] REVIEWS -->
-          <div data-tabsshow-target="seereviews">
+          <div data-tabsshow-target="seereviews" class="container">
             <div class= "container py-5">
-              <ul>
+              <ul style="padding: 0; list-style: none;">
                 <% @user_reviews.each do |review| %>
 
-                  <li>
+                  <li class="mb-3">
                     <% review.rating.times do %>
                     <i class="fas fa-star"></i>
                     <% end %>
@@ -297,8 +297,8 @@
 
 
               <% @other_reviews.each do |review| %>
-              <ul>
-                <li>
+              <ul style="padding: 0; list-style: none;">
+                <li class="mb-3">
                   <% review.rating.times do %>
                   <i class="fas fa-star"></i>
                   <% end %>
@@ -317,7 +317,7 @@
               <% end -%>
             </div>
           </div>
-          <!--[+] REVIEWS -->
+          <!--[-] REVIEWS -->
         </div>
       </div>
     </div>
