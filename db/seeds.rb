@@ -1,4 +1,3 @@
-
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -14,8 +13,13 @@ puts "Smashing all tables"
 Table.destroy_all
 puts "Destroying all cafes"
 Cafe.destroy_all
+puts"Destroying all orders"
+Order.destroy_all
+puts"Destroying all Packages"
+Package.destroy_all
 puts "Destroying all users"
 User.destroy_all
+
 
 
 
@@ -739,6 +743,35 @@ Booking.all.each do |booking|
     rating: data[:rating]
   )
 end
+puts "Creating Packages"
+
+Package.create!(
+  name: "Frappuccino",
+  credits: 200,
+  fee: 15,
+  price: 215
+  )
+Package.create!(
+  name: "Cappuccino",
+  credits: 100,
+  fee: 10,
+  price: 110
+  )
+
+
+Package.create!(
+  name: "Expresso",
+  credits: 50,
+  fee: 7,
+  price: 57
+  )
+
+Package.create!(
+  name: "Ristretto",
+  credits: 20,
+  fee: 4,
+  price: 24
+  )
 
 puts "Created #{User.count} users"
 puts "Created #{Cafe.count} cafes"
