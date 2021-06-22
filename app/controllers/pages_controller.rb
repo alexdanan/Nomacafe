@@ -44,7 +44,8 @@ class PagesController < ApplicationController
       }}
 
 
-       @cafe_bookings = @user_cafe.bookings
+       @cafe_bookings = @user_cafe.bookings.order(start_time: :desc)
+
       end
 
     end
