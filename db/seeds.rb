@@ -391,8 +391,8 @@ nomad_users = [nomad_user1, nomad_user2, nomad_user3, nomad_user4, nomad_user5, 
 debt = (0..100).to_a
 min_debt = (10..15).to_a
 seating = (2..6).to_a
-start_times = [8, 10, 12]
-end_times = [14, 16, 18]
+start_times = [11, 15]
+end_times = [15, 19]
 descriptions = [
   "Table by the window", 
   "Table by the corner", 
