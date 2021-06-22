@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
       cancel_url: order_url(order)
     )
 
-    Credit.create!(user: current_user, amount: order.amount)
+    Credit.create!(user: current_user, amount: package.credits)
 
 
     order.update(checkout_session_id: session.id)
