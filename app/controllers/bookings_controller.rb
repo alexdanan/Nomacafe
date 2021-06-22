@@ -33,7 +33,11 @@ class BookingsController < ApplicationController
 
       if @booking.save
         redirect_to edit_booking_path(@booking)
-        @cafe.increment!(:owed_money, @booking.table.min_credits)
+        if (@booking.start_time - @booking.end_time)/60/60 == 4
+          @cafe.increment!(:owed_money, @booking.table.min_credits)
+        else
+          @cafe.increment!(:owed_money, @booking.table.min_credits * 2)
+        end
       else
         render 'tables/show'
       end
