@@ -17,7 +17,7 @@ class TablesController < ApplicationController
     #authorize @cafe
 
     if @table.save
-      redirect_to cafe_path(@cafe), notice: "Table was successfully created"
+      redirect_to dashboard_path, notice: "Table was successfully created"
     else
       render :new
     end
@@ -36,7 +36,7 @@ class TablesController < ApplicationController
     #authorize @table
 
     if @table.save
-      redirect_to cafe_path(@cafe), notice: "Table was successfully updated"
+      redirect_to dashboard_path, notice: "Table was successfully updated"
     else
       render :edit
     end

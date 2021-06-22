@@ -30,7 +30,12 @@ class BookingsController < ApplicationController
       @booking.user = current_user
       #authorize @booking
       @booking.table = @table
+      @cafe = @booking.table.cafe
+
       if @booking.save
+        @cafe.increment!(:owed_money, @booking.table.min_credits)
+
+
         redirect_to booking_path(@booking)
       else
         render 'tables/show'
