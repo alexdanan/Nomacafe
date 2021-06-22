@@ -88,11 +88,11 @@
 
 
 
-  <div data-toggle4tabs-target="tab3content">
+  <div data-toggle4tabs-target="tab3content" class="container">
 
     <% @reviews.each do |rev| %>
-      <ul>
-        <li>
+      <ul style="padding: 0; list-style: none;">
+        <li class="mb-3">
           <% rev.rating.times do %>
           <i class="fas fa-star"></i>
           <% end %>
