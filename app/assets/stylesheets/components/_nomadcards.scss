@@ -40,3 +40,121 @@
 .notification .notification-actions a:hover {
   color: #555555;
 }
+
+/* NEW CSS */
+.app-list {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 1vw;
+}
+.cafe-card .thumb {
+  position: relative;
+    min-height: 320px;
+    border: 1px solid #cecece;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 6px 6px #f2f2f2;
+    border-radius: 10px;
+}
+
+.cafe-card {
+    padding: 1.5vw;
+    min-height: calc((100vh / 3) - 56px);
+    background: #FFFFFF;
+    border: 1px solid rgba(152, 152, 152, 0.31);
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 2vw;
+}
+
+.cafe-description h2 a {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 24px;
+    color: #172823;
+}
+.cafe-description p {
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(23, 40, 35, 0.6);
+}
+
+.button-cafe-card button {
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 10px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #172823;
+}
+.thumb button {
+    background: #FFFFFF;
+    border: 1px solid #DFDFDF;
+    box-sizing: border-box;
+    border-radius: 100%;
+    min-width: 45px;
+    min-height: 45px;
+    margin-top: 1vw;
+    margin-left: 1vw;
+}
+.thumb-small-card {
+    position: absolute;
+    bottom: -30px;
+    width: 68px;
+    height: 68px;
+    background-size: cover!important;
+    border-radius: 100px;
+    right: 3vw;
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
+    background-position: center!important;
+}
+.cafe-footer {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+.title span {
+    font-size: 10px;
+    line-height: 11px;
+    color: #172823;
+    font-weight: 700;
+}
+.likes-contaienrs {
+    font-size: 12px;
+    line-height: 14px;
+    color: #172823;
+}
+.avatars span {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background-size: cover!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+}
+
+.avatars {
+    margin-left: 21px;
+}
+.avatars span {
+    width: 42px;
+    height: 42px;
+    border-radius: 100px;
+    background-size: cover!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+    border: 1px solid rgba(23, 40, 35, 0.13);
+    margin-left: -21px;
+}
+.avatars {
+    display: flex;
+}

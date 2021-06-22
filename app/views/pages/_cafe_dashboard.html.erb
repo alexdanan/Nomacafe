@@ -94,9 +94,36 @@
 
 
   <div data-toggle4tabs-target="tab4content">
-  <h2>Current Balance: <%= @user_cafe.owed_money%>€ (paid at month end)</h2>
-  <p>(paid at month end)</p>
+    <h2>Current Balance: <%= @user_cafe.owed_money%>€</h2>
+    <p>(paid at end of week)</p>
 
+    <div class="all-bookings">
+      <table>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Day</th>
+
+          <th scope="col">Slot</th>
+          <th scope="col">Table</th>
+          <th scope="col">Nomad</th>
+          <th scope="col">Credits</th>
+
+        </tr>
+        <% @cafe_bookings.each do |booking| %>
+          <tr>
+            <td><%= booking.id %></td>
+            <td><%= booking.start_time.strftime("%a, %b %e") %></td>
+            <td><%= booking.start_time.strftime("%l%p") %> - <%= booking.end_time.strftime("%l%p") %></td>
+            <td><%= booking.table.name %></td>
+            <td>@<%= booking.user.user_name %></td>
+            <td>€<%= booking.table.min_credits %></td>
+
+          </tr>
+
+        <% end %>
+
+      </table>
+
+    </div>
   </div>
-
 </div>

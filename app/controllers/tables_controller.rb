@@ -3,8 +3,8 @@ class TablesController < ApplicationController
   def new
     @cafe = Cafe.find(params[:cafe_id])
     @table = Table.new
-    authorize @table
-    authorize @cafe
+    #authorize @table
+    #authorize @cafe
   end
 
 
@@ -13,11 +13,11 @@ class TablesController < ApplicationController
     @table = Table.new(table_params)
 
     @table.cafe_id = @cafe.id
-    authorize @table
-    authorize @cafe
+    #authorize @table
+    #authorize @cafe
 
     if @table.save
-      redirect_to cafe_path(@cafe), notice: "Table was successfully created"
+      redirect_to dashboard_path, notice: "Table was successfully created"
     else
       render :new
     end
@@ -27,16 +27,16 @@ class TablesController < ApplicationController
 
     @cafe = Cafe.find(params[:cafe_id])
     @table = Table.find(params[:id])
-    authorize @table
+    #authorize @table
   end
 
   def update
     @cafe = Cafe.find(params[:cafe_id])
     @table = Table.find(params[:id])
-    authorize @table
+    #authorize @table
 
     if @table.save
-      redirect_to cafe_path(@cafe), notice: "Table was successfully updated"
+      redirect_to dashboard_path, notice: "Table was successfully updated"
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class TablesController < ApplicationController
 
   def destroy
     @table = Table.find(params[:id])
-    authorize @table
+    #authorize @table
     @table.destroy
     redirect_to dashboard_path
   end

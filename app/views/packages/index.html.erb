@@ -1,0 +1,62 @@
+<div data-controller="toggle2tabs">
+
+  <div class="cafe-tabs">
+      <ul class="list-inline tabs-underlined">
+        <li>
+          <div class="tab-underlined" data-action="click->toggle2tabs#tab1cont" data-toggle2tabs-target="tab1">Order History</div>
+        </li>
+        <li>
+          <div class="tab-underlined" data-action="click->toggle2tabs#tab2cont" data-toggle2tabs-target="tab2">Buy Credits!</div>
+        </li>
+      </ul>
+   </div>
+
+  <div class="" data-toggle2tabs-target="tab1content">
+    <div class="order-page">
+      <h1> Current Balance: €<%= @amounts.sum %> </h1>
+      ----------------------------------------
+      <h3> History of Orders </h3>
+      <% @orders.each do |order| %>
+        <div class="container">
+        <div class="row py-4">
+          <div class="col-md-3"></div>
+          <div class="col">
+            <h1>Order #<%= order.id %> <small><span class="badge badge-primary"><%= order.state %></span></small></h1>
+            <ul class="list-unstyled">
+              <li><strong>ISSUED ON</strong> <%= order.created_at.to_date %></li>
+              <li><strong>PACK</strong> <%= order.package.name %> [Credits: €<%= order.package.credits %>, NomaCafe fee: €<%= order.package.fee %>]</li>
+              <li><strong>TOTAL</strong> <%= humanized_money_with_symbol order.amount %></li>
+              </li>
+            </ul>
+            <p>Use your credits at one of our selected <strong><%= link_to "Cafes", cafes_path  %></strong></p>
+          </div>
+        </div>
+      </div>
+     <% end %>
+    </div>
+ </div>
+
+  <div data-toggle2tabs-target="tab2content">
+
+    <div class=packages-page style="background-image:url(https://images.unsplash.com/photo-1520881363902-a0ff4e722963?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=4800)">
+
+      <h1>NomaCafe Packs</h1>
+      <p>Choose the one that best fits your needs!</p>
+
+      <div class="package-cards">
+        <% @packages.each do |pack| %>
+          <div class="packages">
+            <h3><%= pack.name %></h3>
+            <p>Credits: €<%= pack.credits %></p>
+            <p>NomaCafe fee: €<%= pack.fee %></p>
+            <p>Total Price: <%= humanized_money_with_symbol(pack.price) %>
+            <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'package_id', pack.id %>
+              <%= submit_tag 'Purchase', class: 'btn btn-primary btn-' %></p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
