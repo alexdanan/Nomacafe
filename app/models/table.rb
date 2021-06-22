@@ -1,5 +1,5 @@
 class Table < ApplicationRecord
-  SEAT = ["chair", "sofa", "stool"]
+  SEAT = ["chair", "sofa"]
   belongs_to :cafe
   has_many :bookings, dependent: :destroy
   validates :spots, :min_credits, presence: true
