@@ -21,7 +21,7 @@
       <div class="cafe-card">
         <% if cafe.photo.attached? %>
 
-        <div class="thumb" style="background:url('<%= cl_image_path cafe.photo.key %>');">
+        <div class="thumb" style="background:url('<%= cl_image_path cafe.photo.key %>');background-size: cover;">
           <% else %>
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
           <% end %>
