@@ -32,6 +32,14 @@
 .map-window a {
     text-decoration: none;
 }
+.buttons-container-map {
+    padding: 2px;
+    background: #fff;
+    border: solid 1px #000;
+    border-radius: 100px;
+    line-height: 44px;
+    display: flex;
+}
 // .mapboxgl-popup-content {
 //   text-align: center;
 //   font-family: 'Open Sans', sans-serif;

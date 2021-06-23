@@ -1,6 +1,11 @@
 <div data-controller="togglemaplist">
 
-  <div class="map-list-btn"><div class="btn-map" data-action="click->togglemaplist#tab1cont" data-togglemaplist-target="tab1"> Map</div> <div class ="btn-list" data-action="click->togglemaplist#tab2cont" data-togglemaplist-target="tab2"> List </div></div>
+  <div class="map-list-btn">
+    <div class="buttons-container-map">
+      <div class="btn-map" data-action="click->togglemaplist#tab1cont" data-togglemaplist-target="tab1"> Map</div>
+      <div class ="btn-list" data-action="click->togglemaplist#tab2cont" data-togglemaplist-target="tab2"> List </div>
+    </div>
+  </div>
 
   <div class="map-view" data-togglemaplist-target="tab1content">
     <div id="map"
