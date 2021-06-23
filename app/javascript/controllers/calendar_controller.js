@@ -16,12 +16,9 @@ import listPlugin from '@fullcalendar/list';
 export default class extends Controller {
   static targets = ["element"];
 
-
-
   connect() {
     this.initCalendar();
     this.initColorChange();
-
   }
 
   initCalendar() {
