@@ -12,7 +12,7 @@
           <h2> <%= @user_cafe.name %></h2>
           <p> <%= @user_cafe.location %></p>
         </div>
-        <p class="card-trip-pricing">Min credits: <%=@user_cafe.credits_range  %></p>
+        <p class="card-trip-pricing">Min credits: <%=@user_cafe.credits_range.try(:html_safe)  %></p>
       </div>
     </div>
 
@@ -86,7 +86,7 @@
               <% else %>
                 <i class="fas fa-sun" id="grey-sun"></i>
               <% end %>
-            <span class="align-center">  Min Credits: €<%= table.min_credits %></span>
+            <span class="align-center">  Min Credits: €<%= table.min_credits%></span>
            </p>
 
 

@@ -5,7 +5,8 @@ class Booking < ApplicationRecord
   has_one :cafe, through: :table
   enum status: [:pending, :accepted, :declined]
   
-  # before_create :set_booking_times
+  before_create :set_booking_times
+  before_create :set_owed_money
   
   SLOTS = {morning: {start: 11, end: 15}, afternoon: {start: 15, end: 19}}
 
@@ -21,4 +22,11 @@ class Booking < ApplicationRecord
     self.end_time = DateTime.parse(slots.last.split("_").last).change({hour: SLOTS[slots.last.split("_").first.to_sym][:end]})
   end
 
+  def set_owed_money
+    if (start_time - end_time)/60/60 == 4
+      table.cafe.increment!(:owed_money, table.min_credits)
+    else
+      table.cafe.increment!(:owed_money, table.min_credits * 2)
+    end
+  end
 end
