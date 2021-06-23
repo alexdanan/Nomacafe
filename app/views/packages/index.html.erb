@@ -39,17 +39,20 @@
   <div data-toggle2tabs-target="tab2content">
 
     <div class=packages-page style="background-image:url(https://images.unsplash.com/photo-1520881363902-a0ff4e722963?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=4800)">
+      <div class="yin">
+        <h1>NomaCafe Packs</h1>
+      </div>
+      <div class="yang">
+        <p>Choose the one that best fits your needs!</p>
+      </div>
 
-      <h1>NomaCafe Packs</h1>
-      <p>Choose the one that best fits your needs!</p>
-
-      <div class="package-cards">
+      <div class="grid-container">
         <% @packages.each do |pack| %>
-          <div class="packages">
+          <div class="grid-item">
             <h3><%= pack.name %></h3>
             <p>Credits: €<%= pack.credits %></p>
             <p>NomaCafe fee: €<%= pack.fee %></p>
-            <p>Total Price: <%= humanized_money_with_symbol(pack.price) %>
+            <p class="display-4"><%= humanized_money_with_symbol(pack.price) %>
             <%= form_tag orders_path do %>
               <%= hidden_field_tag 'package_id', pack.id %>
               <%= submit_tag 'Purchase', class: 'btn btn-primary btn-' %></p>
