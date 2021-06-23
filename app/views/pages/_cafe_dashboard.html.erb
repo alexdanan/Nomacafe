@@ -103,17 +103,34 @@
     <% @reviews.each do |rev| %>
       <ul style="padding: 0; list-style: none;">
         <li class="mb-3">
-          <% rev.rating.times do %>
-          <i class="fas fa-star"></i>
-          <% end %>
+          <div class="profile-top">
+            <% if rev.booking.user.photo.attached? %>
+              <%= cl_image_tag(rev.booking.user.photo.key, width: 50, height: 50, crop: :fill, q_auto: :good) %>
+            <% else %>
+              <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' />
+            <% end %>
+          </div>
+          <div class="d-flex flex-column">
+            <span>
+              <%= rev.booking.user.user_name %>
+            </span>
+            <span>
+              <%= rev.created_at.strftime("%d %b %Y") %>
+            </span>
+          </div>
         </li>
-      <div>
+        <div>
+          <div class="mb-2">
+            <% rev.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </div>
           <li>
             <%= rev.content %>
           </li>
-      </div>
+        </div>
       </ul>
-  <% end %>
+    <% end %>
 
   </div>
 
