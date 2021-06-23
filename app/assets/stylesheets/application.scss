@@ -41,7 +41,7 @@
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px #00000029;
-    min-height: 60vh;
+    // min-height: 60vh;
     margin-left: .5rem;
     margin-right: .5rem;
     margin-bottom: 1rem;
@@ -56,4 +56,5 @@
 }
 .cafe-tables ul li {
     padding-left: 20px;
+    padding-right: 20px;
 }

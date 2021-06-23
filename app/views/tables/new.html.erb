@@ -3,7 +3,7 @@
 <%= simple_form_for ([@cafe, @table]) do |f| %>
 <%= f.input :name, label: "Descriptive Title" %>
 <%= f.input :spots, collection: (1..20).to_a, label: "Number of spots" %>
-<%= f.input :min_credits %>
+<%= f.input :min_credits, label:"Minimum credits consumption(4h slot)" %>
 <%= f.input :seat, collection: Table::SEAT, label: "Type of seat" %>
 <%= f.input :wifi %>
 <%= f.input :outlet %>

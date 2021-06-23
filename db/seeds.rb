@@ -518,15 +518,15 @@ nomad_users = [nomad_user1, nomad_user2, nomad_user3, nomad_user4, nomad_user5, 
 # ]
 
 debt = (0..100).to_a
-min_debt = (1..10).to_a
+min_debt = (10..15).to_a
 seating = (2..6).to_a
-start_times = [8, 10, 12]
-end_times = [14, 16, 18]
+start_times = [11, 15]
+end_times = [15, 19]
 descriptions = [
   "Table by the window", 
   "Table by the corner", 
-  "Table under the air conditioner", 
-  "Table in the middle of the room", 
+  "Table by aircon",
+  "Table middle of the room",
   "Table by the stalls", 
   "Table with sunlight"
 ]
@@ -541,84 +541,72 @@ cafes = [
     image_url: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1930&q=80",
     name: "BROEI", location: "Avinguda Diagonal, 208, 08018 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe1
   },
   {
     image_url: "https://images.unsplash.com/photo-1481833761820-0509d3217039?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
     name: "Relax", location: "Carrer de Pujades, 178, 08005 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe2
   },
   {
     image_url: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
     name: "R Art of Coffe", location: "Carrer de la Canuda, 6, 08002 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe3
   },
   {
     image_url: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80",
     name: "Human", location: "Rambla del Raval, s/n, 08001 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe4
   },
   {
     image_url: "https://images.unsplash.com/photo-1529676468696-f3a47aba7d5d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80",
     name: "Office", location: "C. de Pallars, 65, 08018 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe5
   },
   {
     image_url: "https://i.pinimg.com/564x/8c/ac/a3/8caca3908bbcd48b1202eb9b94b8309f.jpg",
     name: "MY COFFE", location: "Pg. de Sant Joan, 56, 08009 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe6
   },
   {
     image_url: "https://i.pinimg.com/564x/10/a0/23/10a02329caca2b983bca534f0a658ac9.jpg",
     name: "CRAFT", location: "Av. d'Icària, 167, 08005 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe7
   },
   {
     image_url: "https://i.pinimg.com/564x/3e/28/82/3e2882a7e05a2467f9e05877f7a49f6c.jpg",
     name: "Coffe", location: "Rambla de Catalunya, 10, 08007 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe8
   },
   {
     image_url: "https://i.pinimg.com/564x/af/e5/d1/afe5d1dca4fae869694cc0d64a7c5b85.jpg",
     name: ".RAW", location: "Gran Via de les Corts Catalanes, 680, 08010 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe9
   },
   {
     image_url: "https://i.pinimg.com/564x/98/7e/b2/987eb21905705119e0d4c20de6b97712.jpg",
     name: "In Coffe we trust", location: "Passeig de Lluís Companys, 08003 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe10
   },
   {
     image_url: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
     name: "Pietro's", location: "Carrer de la Mare de Déu del Coll, 73, 08023 Barcelona, Spain",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe11
   },
   {
     image_url: "https://images.unsplash.com/photo-1493857671505-72967e2e2760?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
     name: "Bikin'n out", location: "C/ Maignon, 11, Barcelona, ES 08024",
     opening_times: "9:00 A.M. Monday to Friday",
-    owed_money: debt.sample,
     user: user_cafe12
   },
   # {
@@ -663,7 +651,6 @@ cafes.each do |cafe|
     name: cafe[:name], 
     location: cafe[:location], 
     opening_times: cafe[:opening_times], 
-    owed_money: cafe[:owed_money],
     user: cafe[:user]
 
   )

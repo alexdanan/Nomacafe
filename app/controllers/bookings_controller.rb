@@ -26,12 +26,18 @@ class BookingsController < ApplicationController
 
     def create
       @booking = Booking.new(booking_params)
-      @booking.status = :accepted
       @booking.user = current_user
       #authorize @booking
       @booking.table = @table
+      @cafe = @booking.table.cafe
+
       if @booking.save
-        redirect_to booking_path(@booking)
+        redirect_to edit_booking_path(@booking)
+        if (@booking.start_time - @booking.end_time)/60/60 == 4
+          @cafe.increment!(:owed_money, @booking.table.min_credits)
+        else
+          @cafe.increment!(:owed_money, @booking.table.min_credits * 2)
+        end
       else
         render 'tables/show'
       end

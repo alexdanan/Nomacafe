@@ -42,9 +42,14 @@ class PagesController < ApplicationController
       #     image_url: "https://kitt.lewagon.com/placeholder/users/arthur-littm"
       #   end
       }}
+
+
+       @cafe_bookings = @user_cafe.bookings.order(start_time: :desc)
+
+      end
+
     end
 
-  end
 
   def nomad_community
     @nomads = User.where(nomacafe_type: "nomad")

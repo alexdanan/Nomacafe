@@ -1,3 +1,5 @@
+<body class=dash-page>
+
 <div class="card-trip">
       <% if @user_cafe.photo.attached? %>
         <img src="<%= cl_image_path @user_cafe.photo.key %>" />
@@ -10,13 +12,13 @@
           <h2> <%= @user_cafe.name %></h2>
           <p> <%= @user_cafe.location %></p>
         </div>
-        <p class="card-trip-pricing">Minimim credits applied: <%=@user_cafe.credits_range  %></p>
+        <p class="card-trip-pricing">Min credits: <%=@user_cafe.credits_range  %></p>
       </div>
     </div>
 
 <div data-controller="toggle4tabs">
 
-  <div class=cafe-tabs>
+  <div class="tabs-dash">
     <ul class="list-inline tabs-underlined">
       <li>
         <div data-action="click->toggle4tabs#tab1cont" class="tab-underlined" data-toggle4tabs-target="tab1">Bookings</div>
@@ -49,35 +51,58 @@
 
 
   <div class="cafe-tables" data-toggle4tabs-target="tab2content">
-  <ul>
+    <p style="text-align: right; padding-right: 16px;"><%= link_to "+ Add a table", new_cafe_table_path(@user_cafe) %></p>
+
+    <ul>
+      <% @tables.each do |table| %>
+        <li valss="list-tables">
+          <p><%= table.name %> (<%= table.spots %> spots)
+           <span class="align-right"><%= link_to edit_cafe_table_path(table.cafe_id, table) do %>
+            <i class="far fa-edit"></i>
+            <% end %>
+          <%= link_to [table.cafe, table], method: :delete do %>
+            <i class="far fa-trash-alt"></i>
+          <% end  %></span>
+        </p>
+          <p>
+            <% if table.seat == "chair" %>
+              <i class="fas fa-chair"></i>
+              <% else %>
+                 <i class="fas fa-chair"></i>
+              <% end %>
+
+              <% if table.wifi == true %>
+                <i class="fas fa-wifi"></i>
+              <% else %>
+                <i class="fas fa-wifi" id="grey-wifi"></i>
+              <% end %>
+              <% if table.outlet == true %>
+                <i class="fa-solid fa-plug"></i>
+              <% else %>
+                <i class="fa-solid fa-plug" id="grey-plug"></i>
+              <% end %>
+              <% if table.outside == true %>
+                <i class="fas fa-sun"></i>
+              <% else %>
+                <i class="fas fa-sun" id="grey-sun"></i>
+              <% end %>
+            <span class="align-center">  Min Credits: €<%= table.min_credits %></span>
+           </p>
 
 
-    <% @tables.each do |table| %>
-      <li>
-    <h5><%= table.name %></h5>
-
-        <p> <strong>Number of Spots: </strong> <%= table.spots %>
-            <strong>Type of Seats: </strong> <%= table.seat %>
-            <strong>Minimum Credits: </strong><%= table.min_credits %>
-
-         </p>
-
-        <p><%= link_to "Edit Table", edit_cafe_table_path(table.cafe_id, table) %></p>
-        <p> <%= link_to "Delete Table", [table.cafe, table], method: :delete %></p>
-      </li>
-    <% end %>
-  </ul>
-  <p><%= link_to "Add a new table", new_cafe_table_path(@user_cafe) %></p>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
 
 
 
-  <div data-toggle4tabs-target="tab3content">
+  <div data-toggle4tabs-target="tab3content" class="container">
 
     <% @reviews.each do |rev| %>
-      <ul>
-        <li>
+      <ul style="padding: 0; list-style: none;">
+        <li class="mb-3">
           <% rev.rating.times do %>
           <i class="fas fa-star"></i>
           <% end %>
@@ -94,9 +119,37 @@
 
 
   <div data-toggle4tabs-target="tab4content">
-  <h2>Current Balance: <%= @user_cafe.owed_money%>€ (paid at month end)</h2>
-  <p>(paid at month end)</p>
+    <div class="dash-trans">
+      <h2>Current Balance: <%= @user_cafe.owed_money%>€</h2>
+      <p><small>(paid end of week)</small></p>
 
+      <div class="all-bookings">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+
+              <th scope="col" class="slot-heading">Slot</th>
+              <th scope="col">Table / Nomad</th>
+              <th scope="col">Credits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cafe_bookings.each do |booking| %>
+              <tr>
+                <td><%= booking.id %></td>
+                <td class="slot-column"><%= booking.start_time.strftime("%a, %b %e") %><br><%= booking.start_time.strftime("%l%p") %> - <%= booking.end_time.strftime("%l%p") %></td>
+
+                <td><%= booking.table.name %><br>@<%= booking.user.user_name %></td>
+                <td>€<%= booking.table.min_credits %></td>
+
+              </tr>
+
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-
 </div>
+</body>

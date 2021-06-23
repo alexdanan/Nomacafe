@@ -1,0 +1,52 @@
+.login {
+  background-color: #9d0208;
+}
+
+.uber-container {
+  display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    .sign-link {
+      text-align: center;
+      color: #f4f4f4;
+      background-color: black;
+      border-radius: 50px;
+    }
+    p {
+      padding: 8px;
+    }
+    .btn {
+      background-color: #9d0208;
+      color: #f4f4f4;
+      padding: 2px;
+      width: 100%;
+    }
+    .btn-round {
+      border-radius: 50px;
+      padding: 8px;
+    }
+    &.center-div {
+      position: relative;
+    }
+}
+
+.title-header {
+  text-align: center;
+  color: #f4f4f4;
+  h1 {
+    font-family: 'Pacifico', cursive;
+  }
+}
+
+.session-container {
+  background-color: #f4f4f4;
+  border-radius: 35px;
+  padding: 32px;
+}
+
+.render {
+  text-align: center;
+  margin-top: 32px;
+}

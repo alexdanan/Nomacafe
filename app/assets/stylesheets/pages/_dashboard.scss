@@ -1,0 +1,87 @@
+.all-bookings {
+  font-size: 12px;
+}
+
+.slot-column {
+  padding: 8px;
+  font-size: 11px;
+  min-width: 100px;
+}
+
+.slot-heading {
+  padding: 8px;
+}
+
+.spacing {
+  color: transparent;
+}
+
+.table th {
+  color: $nomacafe;
+}
+
+.tabs-dash {
+  font-size: 11px;
+}
+
+.dash-page {
+}
+
+.dash-trans {
+  h2 {
+    text-align: center;
+    font-family: "Pacifico";
+  }
+
+  p {
+    text-align: center;
+    opacity: 0.6;
+  }
+}
+
+.card-trip-pricing {
+  text-align: right;
+}
+
+// .fc-header-toolbar {
+//   display: hidden !important;
+// }
+.cafe-tables {
+  font-size: 14px;
+  .fa-chair {
+      color: $nomacafe;
+  }
+  .fa-sofa {
+    color: $nomacafe
+  }
+  .fa-edit {
+    color: black !important;
+  }
+  .fa-trash-alt{
+    color: black !important;
+  }
+  .list-tables {
+    border-color: grey;
+    border: solid;
+  }
+  .align-right {
+    float: right;
+  }
+  .align-center{
+    position: relative;
+    left: 16px;
+  }
+  #grey-wifi {
+    color: grey;
+  }
+  .fa-sun {
+    color: goldenrod;
+  }
+  #grey-sun {
+    color: grey;
+  }
+  .fa-wifi {
+    color: $nomacafe;
+  }
+}
+
