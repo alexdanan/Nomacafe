@@ -1,34 +1,24 @@
+body{
+      padding-bottom: 63px;
+}
 .map-list-btn {
   display: flex;
   justify-content: center;
   margin: auto;
 }
-
-.btn-map {
-  display: inline;
-  padding: 8px;
-  border-color: $nomacafe;
-  border-style: solid;
-  border-radius: 16px;
+.btn-map, .btn-list{
+  line-height: 44px;
+  border-radius: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
   cursor: pointer;
-  color: $nomacafe;
-}
-
-.btn-list {
-  display: inline;
-  padding: 8px;
-  border-color: $nomacafe;
-  border-radius: 16px;
-  border-style: solid;
-  cursor: pointer;
-  color: $nomacafe;
 }
 
 .btn-active {
-  background-color: $nomacafe;
-  color: white;
+    border: solid 1px #ccc;
+   color: #fff;
+   background-color: $nomacafe;
 }
-
 
 .fa-heart:before {
   color: $nomacafe;
@@ -46,5 +36,31 @@
   position: absolute;
   top: 60px;
   left: 16px;
+}
+.packages-page {
+    margin-top: -20px;
+    padding-top: 50px;
+}
+.sub-nav {
+    position: fixed;
+    bottom: 0px;
+    z-index: 9999;
+    background: #fff;
+    line-height: 60px;
+    width: 100%;
+    border-top: solid 1px #ccc;
+}
+.sub-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
+.sub-nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: center;
 }
