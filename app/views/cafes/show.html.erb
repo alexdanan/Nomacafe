@@ -3,7 +3,7 @@
 <section class="single-cafe">
   <div class="inner">
 
-    <div class="thumb" style="background:url('<%= cl_image_path @cafe.photo.key %>');">
+    <div class="thumb" style="background-image:url('<%= cl_image_path @cafe.photo.key %>');">
 
     </div>
 
@@ -265,43 +265,36 @@
           <!--[+] REVIEWS -->
           <div data-tabsshow-target="seereviews" class="container">
             <div class= "container py-5">
-              <ul style="padding: 0; list-style: none;">
-                <% @user_reviews.each do |review| %>
-
+              <% @reviews.each do |review| %>
+                <ul style="padding: 0; list-style: none;">
                   <li class="mb-3">
-                    <% review.rating.times do %>
-                    <i class="fas fa-star"></i>
-                    <% end %>
-
-                    <div class="review-counter">
-                         <%= review.content %>
+                    <div class="profile-top">
+                      <% if review.booking.user.photo.attached? %>
+                        <%= cl_image_tag(review.booking.user.photo.key, width: 50, height: 50, crop: :fill, q_auto: :good) %>
+                      <% else %>
+                        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' />
+                      <% end %>
                     </div>
-                    <div class="link">
-                  <% if review.booking.user == current_user %>
-                    <%= link_to 'Delete', review_path(review), method: :delete  %>
-                  <% end %>
-                </div>
-              </li>
-              <% end -%>
-                  </ul>
-
-
-
-
-
-              <% @other_reviews.each do |review| %>
-              <ul style="padding: 0; list-style: none;">
-                <li class="mb-3">
-                  <% review.rating.times do %>
-                  <i class="fas fa-star"></i>
-                  <% end %>
-                </li>
-                <div>
+                    <div class="d-flex flex-column">
+                      <span>
+                        <%= review.booking.user.user_name %>
+                      </span>
+                      <span>
+                        <%= review.created_at.strftime("%d %b %Y") %>
+                      </span>
+                    </div>
+                  </li>
+                  <div>
+                    <div class="mb-2">
+                      <% review.rating.times do %>
+                        <i class="fas fa-star"></i>
+                      <% end %>
+                    </div>
                     <li>
                       <%= review.content %>
                     </li>
-                </div>
-              </ul>
+                  </div>
+                </ul>
                 <div class="link">
                   <% if review.booking.user == current_user %>
                     <%= link_to 'Delete', review_path(review), method: :delete %>

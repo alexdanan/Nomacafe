@@ -127,9 +127,9 @@
   <div class="profile-hedader">
     <div class="profile-thumb">
       <% if current_user.photo.attached? %>
-        <div class="thumb" style="background:url('<%= cl_image_path current_user.photo.key %>')"></div>
+        <div class="thumb" style="background-image:url('<%= cl_image_path current_user.photo.key %>')"></div>
       <% else %>
-      <div class="thumb" style="background:url('https://kitt.lewagon.com/placeholder/users/arthur-littm')"></div>
+      <div class="thumb" style="background-image:url('https://kitt.lewagon.com/placeholder/users/arthur-littm')"></div>
     <% end %>
       <div class="profile-name">@<%= current_user.user_name %></div>
     </div>

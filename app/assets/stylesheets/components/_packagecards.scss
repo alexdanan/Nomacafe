@@ -5,6 +5,50 @@
   margin: 16px;
   text-align: center;
 }
+.order-page {
+    padding: 1.5rem;
+    background: #fff;
+    margin: 1.5rem;
+    border-radius: 6px;
+    border: solid 1px #ccc;
+    font-size: 18px;
+}
+span.divider {
+    min-width: 100%;
+    min-height: 1px;
+    background: #ccc;
+    display: block;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.order-page h3 {
+    font-size: 16px;
+}
+
+.col.order-container {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background: #fff;
+    border: solid 1px #ccc;
+    border-radius: 6px;
+}
+span.btn-orders a {
+    padding: .6rem;
+    background: #9e020a;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+}
+.packages-page {
+    margin-top: -16px;
+    padding-top: 30px;
+}
+.package-cards {
+    display: grid;
+    align-self: center;
+    justify-items: center;
+    margin-top: 44px;
+}
 
 .packages {
   padding: 16px;
@@ -66,4 +110,3 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-
