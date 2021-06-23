@@ -76,7 +76,7 @@
           <!--[-] Reviews -->
           <!--[+] Caffee Policy -->
           <div class="caffee-policy">
-            <span>Min credits: <%=@cafe.credits_range%></span>
+            <span>Min credits: <%=@cafe.credits_range.try(:html_safe)%></span>
           </div>
           <!--[-] Caffee Policy -->
           <!--[+] TABLE BOOK-->
