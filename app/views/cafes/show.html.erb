@@ -82,7 +82,7 @@
           <!--[+] TABLE BOOK-->
             <div class="calendar-days d-flex w-100 justify-content-around">
               <% 7.times do |i| %>
-              <div data-index="<%=i%>" data-action="click->bookings#select">
+              <div data-index="<%=i%>" data-action="click->bookings#select" class="day-input">
                 <%= (DateTime.now + i + 1).strftime("%A") %>
               </div>
             <% end %>
@@ -234,7 +234,7 @@
                             <% end %>
                             </span>
                           <div class="spot-nomad-info">
-                              <%table.bookings_by_slot((DateTime.now + index + 1), key).each do |booking|%>
+                              <%table.bookings_by_slot((DateTime.now + index + 1), key).where(visible: true).each do |booking|%>
                               <div class = "nomad-profile">
                               <%= link_to user_path booking.user do %>
                                 <div class = "thumb" style="background-image:url(<%= cl_image_path booking.user.photo.key %>)">
