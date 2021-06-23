@@ -1,3 +1,9 @@
+.table-border {
+  background-color: rgba(211, 211, 211, 0.294);
+  padding: 8px;
+  margin: 8px;
+}
+
 .all-bookings {
   font-size: 12px;
 }
@@ -24,8 +30,9 @@
   font-size: 11px;
 }
 
-.dash-page {
-}
+// .dash-page {
+
+// }
 
 .dash-trans {
   h2 {
@@ -82,6 +89,12 @@
   }
   .fa-wifi {
     color: $nomacafe;
+  }
+  .fa-plug{
+    color: $nomacafe;
+  }
+  #grey-plug {
+    color: grey;
   }
 }
 
