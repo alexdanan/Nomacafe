@@ -1,9 +1,24 @@
-.package-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.yin h1 {
+  font-family: 'Pacifico', cursive;
+}
+.yang {
+  background-color: rgba(255, 255, 255, 0.144);
+}
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   margin: 16px;
   text-align: center;
+  h3 {
+    color: $noma2;
+  }
+}
+.grid-item {
+  background-color: #000000a2;
+  border-radius: 5px;
+  color: #f4f4f4;
+  padding: 8px;
 }
 .order-page {
     padding: 1.5rem;

@@ -24,13 +24,8 @@ export default class extends Controller {
   initCalendar() {
     let bookings = JSON.parse(this.elementTarget.dataset.bookings)
     let calendar = new Calendar(this.elementTarget, {
-      plugins: [dayGridPlugin, timeGridPlugin, listPlugin],
+      plugins: [listPlugin],
       initialView: 'listWeek',
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,listWeek'
-      },
       events: bookings,
       eventContent: function (info) {
         console.log(info)
@@ -69,17 +64,19 @@ export default class extends Controller {
 
   initColorChange() {
     const calendarListIcon = document.querySelector(".fc-listWeek-button")
-    calendarListIcon.addEventListener("click", () => {
-      const calendarEvents = document.querySelectorAll(".fc-list-event")
-      calendarEvents.forEach(event => {
-        const calendarIcon = event.querySelector(".fc-list-event-dot")
-        const calendarText = event.querySelector(".fc-list-event-title")
-        if (calendarText.innerHTML.includes("accepted")) {
-          calendarIcon.style.borderColor = "green"
-        } else if (calendarText.innerHTML.includes("pending")) {
-          calendarIcon.style.borderColor = "red"
-        }
+    if (calendarListIcon) {
+      calendarListIcon.addEventListener("click", () => {
+        const calendarEvents = document.querySelectorAll(".fc-list-event")
+        calendarEvents.forEach(event => {
+          const calendarIcon = event.querySelector(".fc-list-event-dot")
+          const calendarText = event.querySelector(".fc-list-event-title")
+          if (calendarText.innerHTML.includes("accepted")) {
+            calendarIcon.style.borderColor = "green"
+          } else if (calendarText.innerHTML.includes("pending")) {
+            calendarIcon.style.borderColor = "red"
+          }
+        })
       })
-    })
+    }
   }
 }
