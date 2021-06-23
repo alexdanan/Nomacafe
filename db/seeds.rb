@@ -695,8 +695,10 @@ Table.all.each do |table|
     # Same as line 128
     user: nomad_users.sample,
     table: table,
-    start_time: date.change({hour: start_times.sample}),
-    end_time: date.change({hour: end_times.sample}),
+    slots: [
+      "morning_#{date}",
+      "afternoon_#{date}"
+    ],
     status: 1
   )
   review = reviews.sample
