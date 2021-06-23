@@ -45,7 +45,7 @@
           </li>
         </ul>
       </div>
-      <div class="tab-container">
+      <div class="tab-container" data-controller="bookings">
         <div class="tab1 tab-info tab-item">
           <div class="title-tab">
             <h3><%= @cafe.name %></h3>
@@ -80,7 +80,13 @@
           </div>
           <!--[-] Caffee Policy -->
           <!--[+] TABLE BOOK-->
-
+            <div class="calendar-days d-flex w-100 justify-content-around">
+              <% 7.times do |i| %>
+              <div data-index="<%=i%>" data-action="click->bookings#select">
+                <%= (DateTime.now + i + 1).strftime("%A") %>
+              </div>
+            <% end %>
+            </div>
             <div class="slots">
               <ul>
                 <% @cafe.tables.each do |table| %>
@@ -202,7 +208,7 @@
                     <label class="label-close" for="null">Close</label>
                   </div>
                   <% 7.times do |index| %>
-                  <div class="slot-container">
+                  <div class="slot-container d-none" data-bookings-target="slot">
                     <div class="slot-header">
                       <div class="slot-data"> 
                         <span> <%= (DateTime.now + index + 1).strftime("%A #{(DateTime.now + index + 1).day.ordinalize} of %B") %></span>

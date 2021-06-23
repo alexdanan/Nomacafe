@@ -266,7 +266,7 @@ padding-right: 15px;
   /* SLOT TABS */
   #slot-1:checked ~ .slot-container,
   #slot-2:checked ~ .slot-container {
-    display: block!important;
+    // display: block!important;
 }
 
 #slot-1:checked ~  .slot-title .label-open {
