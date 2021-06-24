@@ -42,6 +42,7 @@ gem 'geocoder'
 gem 'money-rails'
 gem 'stripe'
 gem 'stripe_event'
+gem 'activity_notification', '~> 2.2', '>= 2.2.2'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'

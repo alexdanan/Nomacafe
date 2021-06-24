@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :cafes do
     resources :tables, only: [:new, :create, :edit, :update, :destroy]
   end
-
+  notify_to :users, with_devise: :users
 
   resources :tables, only: [] do
     resources :bookings, only: [:create, :new]
