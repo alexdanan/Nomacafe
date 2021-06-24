@@ -10,6 +10,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl/2.3.1/mapbox-gl.min.css" integrity="sha512-QfB9fC7ZNDnjrhsw3Zt0ymk10BHD3TWjzXCeZ11Goz+in3PPMgJxtjDhPTHqBHjgL6tiNGex00hyLfrYp/TKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
     <link rel="stylesheet" href="https://unpkg.com/fullcalendar@5.8.0/main.min.css">
   
@@ -22,8 +23,9 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    
+    <%= render 'shared/subnav' %>
 
     <%= yield %>
+    <%= render 'shared/subnav' %>
   </body>
 </html>
