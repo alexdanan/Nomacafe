@@ -23,7 +23,7 @@ class CafesController < ApplicationController
     #authorize @cafe
     #authorize @tables
 
-    @user_reviews = @cafe.reviews.select { |review| review.booking.user == current_user }
+    # @user_reviews = @cafe.reviews.select { |review| review.booking.user == current_user }
 
     unless @user_reviews.empty?
       @average_user_rating = average_rating(@user_reviews)
@@ -31,7 +31,7 @@ class CafesController < ApplicationController
 
 
     @other_reviews = @cafe.reviews.select { |review| review.booking.user != current_user }
-    @reviews = @user_reviews + @other_reviews
+    @reviews = @cafe.reviews
 
 
     @new_fav = Favourite.new
