@@ -81,11 +81,18 @@
           <!--[-] Caffee Policy -->
           <!--[+] TABLE BOOK-->
             <div class="calendar-days d-flex w-100 justify-content-around">
-              <% 7.times do |i| %>
-              <div data-index="<%=i%>" data-action="click->bookings#select" class="day-input">
-                <%= (DateTime.now + i + 1).strftime("%A") %>
-              </div>
-            <% end %>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Select Day
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <% 7.times do |i| %>
+                    <div data-index="<%=i%>" data-action="click->bookings#select" class="day-input">
+                      <%= (DateTime.now + i + 1).strftime("%A") %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>              
             </div>
             <div class="slots">
               <ul>
@@ -95,7 +102,7 @@
                   <input class="no" id="slot-1" type="radio" name="slots">
                   <input class="no" id="null" type="radio" name="slots">
                   <div class="slot-title">
-                    <div class=""><%= table.name%> - <%= table.spots %> spots</div>
+                    <div class=""><%= table.name.capitalize%> - <%= table.spots %> Spots</div>
                     <div class="slot-icons">
                       <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 489.3 489.3" style="enable-background:new 0 0 489.3 489.3;" xml:space="preserve">
 <g>
@@ -212,11 +219,11 @@
                     <div class="slot-header">
                       <div class="slot-data"> 
                         <span> <%= (DateTime.now + index + 1).strftime("%A #{(DateTime.now + index + 1).day.ordinalize} of %B") %></span>
-                         <span> min credits: <%= table.min_credits %>€/h</span>
+                         <span> Minimum Credits: <%= table.min_credits %>€/h</span>
                       </div>
                       <div class="slot-">
                         <span>
-                          Pick your slot(s):
+                          Pick Your Slot(s):
                         </span>
                       </div>
                     </div>
@@ -228,9 +235,9 @@
                         <div class="slot-info-inner">
                           <span class="spots-info">
                             <%= table.spots_left((DateTime.now + index + 1), key) %> 
-                            spot(s) left
+                            Spot(s) Left
                             <% if table.spots_left((DateTime.now + index + 1), key).positive?%>
-                              - join the table
+                              - Join The Table!
                             <% end %>
                             </span>
                           <div class="spot-nomad-info">

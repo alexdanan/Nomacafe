@@ -1,6 +1,4 @@
-.day-input{
-  color: white;
-}
+
 
 .calendar-days{
   background-color: $nomacafe;
@@ -9,4 +7,31 @@
 .day-input:hover{
   opacity: 80%;
   cursor:pointer;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: $nomacafe !important;
+  border-color: $nomacafe !important
+}
+
+.dropdown-menu{
+  text-align: center;
+}
+
+input[type="submit" i] {
+}
+
+.time {
+  width: 80px !important;
+  background-color: $nomacafe !important;
+  color: #fff;
+}
+
+input[type="checkbox" i]:hover {
+  cursor: pointer;
+}
+
+input[type="checkbox" i] {
+  margin-top: 15px;
 }
