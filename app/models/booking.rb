@@ -10,10 +10,10 @@ class Booking < ApplicationRecord
   
   after_update :notify_cafe_owner
   
-  acts_as_notifiable :users,
   
   SLOTS = {morning: {start: 11, end: 15}, afternoon: {start: 15, end: 19}}
-
+  
+  acts_as_notifiable :users,
   targets: ->(booking, key) {
     if key == "booking.owner"
       [booking.cafe.user]
