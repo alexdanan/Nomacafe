@@ -31,8 +31,27 @@
 
 .bell-icon {
   color: $nomacafe;
+  font-size: 22px;
 }
 
 .bell-icon-notif {
+  color: $nomacafe;
+  font-size: 22px;
+
+  .fa-circle {
+    color: $noma2;
+    font-size: 12px;
+    position: absolute;
+    bottom: 16px;
+    right: 0.01px;
+
+  }
+
+}
+
+.notifications-drop-down {
+  right: 0;
+  top: 56px;
+
 
 }

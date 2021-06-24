@@ -139,36 +139,40 @@
 
   <!--[-]<%  %>-->
     
+  <div data-controller="togglebell">
+    <div class="header-bell">
+      <div data-action="click->togglebell#toggle">
+        <% if current_user.notifications.empty? %>
+          <i class="fas fa-bell bell-icon" ></i>
+        <% else %>
+          <i class="fas fa-bell bell-icon-notif">
+            <i class="fas fa-circle"></i>
+          </i>
+        <% end %>
 
+        <div class="d-none position-absolute notifications-drop-down" data-togglebell-target="dropdownnotifs" >
+
+          <% current_user.notifications.each do |notification| %>
+            <div class="notification">
+              <img src='<%= cl_image_path Booking.find(notification.notifiable_id).user.photo.key %>' class="avatar-large" />
+            <% if notification.key == "booking.owner" %>
+              <div class="notification-content">
+                <p><small>@<%= Booking.find(notification.notifiable_id).user.user_name %> has just booked <span style="color: $nomacafe;"><%= Booking.find(notification.notifiable_id).table.name %></span> </small></p>
+              </div>
+            <% else %>
+              <div class="notification-content">
+                <p><small>@<%= Booking.find(notification.notifiable_id).user.user_name %> has joined your table!</small></p>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+      </div>
+    </div>
+  </div>
   <!--[-] PROFILE AVATAR-->
   <!--[+] BELL NOTIFICATION -->
-  <div class="header-bell">
-    <div class="btn-group dropleft">
-      <% if current_user.notifications.nil? %>
-        <i class="fas fa-bell bell-icon" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-      <% else %>
-        <i class="fas fa-bell bell-icon-notif" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
-      <% end %>
-
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-        <% current_user.notifications.each do |notification| %>
-          <div class="notification dropdown-item">
-            <img src='<%= cl_image_path Booking.find(notification.notifiable_id).user.photo.key %>' class="avatar-large" />
-          <% if notification.key == "booking.owner" %>
-            <div class="notification-content">
-              <p><small>@<%= Booking.find(notification.notifiable_id).user.user_name %> has just booked <span style="color: $nomacafe;"><%= Booking.find(notification.notifiable_id).table.name %></span> </small></p>
-            </div>
-          <% else %>
-            <div class="notification-content">
-              <p><small>@<%= Booking.find(notification.notifiable_id).user.user_name %> has joined your table!</small></p>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>
