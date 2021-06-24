@@ -42,7 +42,8 @@ body{
     padding-top: 50px;
 }
 .sub-nav {
-    position: fixed;
+    // position: fixed;
+    position: sticky;
     bottom: 0px;
     z-index: 9999;
     background: #fff;
