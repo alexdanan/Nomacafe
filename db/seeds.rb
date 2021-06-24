@@ -625,40 +625,40 @@ cafes = [
   },
   {
     image_url: "https://images.unsplash.com/photo-1493857671505-72967e2e2760?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-    name: "Bikin'n out", location: "C/ Maignon, 11, Barcelona, ES 08024",
+    name: "Bikin'n out", location: "Carrer Gran de Gràcia, 81, 08012 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
     user: user_cafe12
   },
   {
     image_url: "https://images.unsplash.com/photo-1505275350441-83dcda8eeef5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
-    name: "L'estranger", location: "Carrer De La Ciutat De Balaguer, 45, Barcelona, ES 08022",
+    name: "L'estranger", location: "Plaça d'Alfonso Comín, 5, 7, 08023 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
     owed_money: debt.sample,
     user: user_cafe13
   },
   {
     image_url: "https://images.unsplash.com/photo-1579869696034-ec145eb3987c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-    name: "Que callem?", location: "Avda. República Argentina núm. 177, Barcelona, ES 08023",
+    name: "Que callem?", location: "Carrer de Ramón y Cajal, 122, 08024 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
     owed_money: debt.sample,
     user: user_cafe14
   },
   {
     image_url: "https://images.unsplash.com/photo-1617006898062-b7348c051570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1034&q=80",
-    name: "Stir Coffe Co.", location: "Calle Guillem Tell 25 Bajo, Barcelona, ES 08006",
+    name: "Stir Coffe Co.", location: "Carrer d'Olot, 08024 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
     owed_money: debt.sample,
     user: user_cafe15
   },
   {
     image_url: "https://images.unsplash.com/photo-1551887196-72e32bfc7bf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
-    name: "The creative Exchange", location: "Calle Escorial 3, Barcelona, ES 08024",
+    name: "The creative Exchange", location: "Carrer de la Indústria, 46, 08025 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
     owed_money: debt.sample,
     user: user_cafe16
   },{
     image_url: "https://images.unsplash.com/photo-1494346480775-936a9f0d0877?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1003&q=80",
-    name: "The Nomad", location: "Carrer de larrard 57-59, Barcelona, ES 08024",
+    name: "The Nomad", location: "Carrer de Pi i Margall, 22, 24, 08025 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
     owed_money: debt.sample,
     user: user_cafe17
