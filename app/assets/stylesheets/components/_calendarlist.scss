@@ -119,4 +119,8 @@
   border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid var(--fc-event-border-color, green) !important;
 }
 
+.nomad-calendar {
+  min-height: 90vh;
+}
+
 //fit divs around each text title and then use the max-width
