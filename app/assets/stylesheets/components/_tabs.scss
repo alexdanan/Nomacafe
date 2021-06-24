@@ -32,18 +32,24 @@
 .bell-icon {
   color: $nomacafe;
   font-size: 22px;
+  position: relative;
+  top: 5px;
+  left: 7px;
 }
 
 .bell-icon-notif {
   color: $nomacafe;
   font-size: 22px;
+  position: relative;
+  top: 5px;
+  left: 21px;
 
   .fa-circle {
     color: $noma2;
     font-size: 12px;
-    position: absolute;
-    bottom: 16px;
-    right: 0.01px;
+    position: relative;
+    bottom: 12px;
+    right: 14px;
 
   }
 
