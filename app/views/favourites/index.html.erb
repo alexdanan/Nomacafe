@@ -19,13 +19,13 @@
     <% else %>
       <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
     <% end %>
-    <div class="notification-content">
+  <div class="notification-content">
       <p>@<%= nomad.user_name %></p>
       <p><small><%= link_to "See profile", user_path(nomad), target: :_blank %></small></p>
-    </div>
+      </div>
 
     <div class="notification-actions">
-    <% if current_user.follows?(nomad) %>
+      <% if current_user.follows?(nomad) %>
 
         <a><i class="fas fa-heart"></i></a>
       <% else %>
@@ -35,8 +35,8 @@
           <%= f.input :favouritable_type, as: :hidden, input_html: { value: "User" } %>
 
 
-           <a> <button class="btn-heart" type = "submit">
-            <i class="far fa-heart"></i>
+          <a> <button class="btn-heart" type = "submit">
+          <i class="far fa-heart"></i>
           </button> </a>
         <% end %>
       <% end %>
