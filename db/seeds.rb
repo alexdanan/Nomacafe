@@ -34,7 +34,7 @@ res = HTTParty.get("https://uifaces.co/api?limit=30&emotion[]=happiness", header
 res = JSON.parse(res.body)
 
 usernames = ["thedeparted", "sauce", "pumpkins", "composition", "greatsquare", "normanbates", "ocean", "thesting", "blackeye", "bat"]
-fullnames = ["Carl Ely", "Matei Lanzo", "Áedán Caryl", "Zekharyah Gunnhildr", "Sitti Regine", "Nigul Nurullah", "Georg Ingrid", "Goldie Sara", "Aelia Beata", "Rickie Mathis", "Johnathan Kleio", "Lúcia Belma", "Meinard Satan"]
+fullnames = ["Adrian Lazcano", "Ferran Aliagas", "Isaac Basas", "Arnau Gabriel", "Álvaro Delgado", "César Reigada", "Georg Ingrid", "Oscar Fortit", "Ingrid Montserrat", "Bruce Wayne", "Johnathan Kleio", "Gorge Martin", "Elena Garcia"]
 description = [
 "Hello fellow humans, it is I ${completely_real_human_name}, a completely normal, average, and very human earthling, with no ill intentions of ANY kind. I enjoy human things, like oxygen intake, H20 consumption, the subjugation of inferior races, and programming. Bring me to your leader.",
 "I, self made entrepeneur extraordinare, conosseur of the coding arts and other french words, invite you all (as long as you pay) to bask in the glory of my everlasting (as long as i don't get tired) pressence and genius as I proceed to display the magic of my coding skills and aid you on your endeavours (for payment ofcourse).",
@@ -211,51 +211,67 @@ user_cafe12.photo.attach(io: file, filename: 'image.png', content_type: 'image/p
 user_cafe12.save!
 
 
+user_cafe13 = User.create!(
+  email: "lazcano@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
+  nomacafe_type: "cafe"
+)
+user_cafe13.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/elena.jpg')), filename: 'elena.jpg')
+user_cafe13.save!
 
 
+user_cafe14 = User.create!(
+  email: "kassadin@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
+  nomacafe_type: "cafe"
+)
+user_cafe14.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/georg.jpg')), filename: 'georg.jpg')
+user_cafe14.save!
 
 
-# user_cafe13 = User.create!(
-#   email: "lazcano@gmail.com",
-#   password: "password",
-#   password_confirmation: "password",
-#   user_name: usernames.sample,
-#   full_name: fullnames.sample,
-#   description: description.sample,
-#   nomacafe_type: "cafe"
-# )
-# file = URI.open(res[30]["photo"])
-# user_cafe13.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe13.save!
+user_cafe15 = User.create!(
+  email: "raulmedrei@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
+  nomacafe_type: "cafe"
+)
+user_cafe15.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/trinidad.jpg')), filename: 'trinidad.jpg')
+user_cafe15.save!
 
+user_cafe16 = User.create!(
+  email: "arnaugabriel@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
+  nomacafe_type: "cafe"
+)
+user_cafe16.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/yanik.jpg')), filename: 'yanik.jpg')
+user_cafe16.save!
 
-# user_cafe14 = User.create!(
-#   email: "kassadin@gmail.com",
-#   password: "password",
-#   password_confirmation: "password",
-#   user_name: usernames.sample,
-#   full_name: fullnames.sample,
-#   description: description.sample,
-#   nomacafe_type: "cafe"
-# )
-# file = URI.open(res[31]["photo"])
-# user_cafe14.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe14.save!
-
-
-# user_cafe15 = User.create!(
-#   email: "raulmedrei@gmail.com",
-#   password: "password",
-#   password_confirmation: "password",
-#   user_name: usernames.sample,
-#   full_name: fullnames.sample,
-#   description: description.sample,
-#   nomacafe_type: "cafe"
-# )
-# file = URI.open(res[32]["photo"])
-# user_cafe15.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
-# user_cafe15.save!
-
+user_cafe17 = User.create!(
+  email: "rebus@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: usernames.sample,
+  full_name: fullnames.sample,
+  description: description.sample,
+  nomacafe_type: "cafe"
+)
+user_cafe17.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/vlad.jpg')), filename: 'vlad.jpg')
+user_cafe17.save!
 
 puts "Creating users(nomads)!"
 
@@ -613,27 +629,40 @@ cafes = [
     opening_times: "9:00 A.M. Monday to Friday",
     user: user_cafe12
   },
-  # {
-  #   image_url: "https://images.unsplash.com/photo-1505275350441-83dcda8eeef5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
-  #   name: "L'estranger", location: "Carrer De La Ciutat De Balaguer, 45, Barcelona, ES 08022",
-  #   opening_times: "9:00 A.M. Monday to Friday",
-  #   owed_money: debt.sample,
-  #   user: user_cafe13
-  # },
-  # {
-  #   image_url: "https://images.unsplash.com/photo-1579869696034-ec145eb3987c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-  #   name: "Que callem?", location: "Avda. República Argentina núm. 177, Barcelona, ES 08023",
-  #   opening_times: "9:00 A.M. Monday to Friday",
-  #   owed_money: debt.sample,
-  #   user: user_cafe14
-  # },
-  # {
-  #   image_url: "https://images.unsplash.com/photo-1617006898062-b7348c051570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1034&q=80",
-  #   name: "Stir Coffe Co.", location: "Calle Guillem Tell 25 Bajo, Barcelona, ES 08006",
-  #   opening_times: "9:00 A.M. Monday to Friday",
-  #   owed_money: debt.sample,
-  #   user: user_cafe15
-  # }
+  {
+    image_url: "https://images.unsplash.com/photo-1505275350441-83dcda8eeef5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
+    name: "L'estranger", location: "Carrer De La Ciutat De Balaguer, 45, Barcelona, ES 08022",
+    opening_times: "9:00 A.M. Monday to Friday",
+    owed_money: debt.sample,
+    user: user_cafe13
+  },
+  {
+    image_url: "https://images.unsplash.com/photo-1579869696034-ec145eb3987c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    name: "Que callem?", location: "Avda. República Argentina núm. 177, Barcelona, ES 08023",
+    opening_times: "9:00 A.M. Monday to Friday",
+    owed_money: debt.sample,
+    user: user_cafe14
+  },
+  {
+    image_url: "https://images.unsplash.com/photo-1617006898062-b7348c051570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1034&q=80",
+    name: "Stir Coffe Co.", location: "Calle Guillem Tell 25 Bajo, Barcelona, ES 08006",
+    opening_times: "9:00 A.M. Monday to Friday",
+    owed_money: debt.sample,
+    user: user_cafe15
+  },
+  {
+    image_url: "https://images.unsplash.com/photo-1551887196-72e32bfc7bf3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+    name: "The creative Exchange", location: "Calle Escorial 3, Barcelona, ES 08024",
+    opening_times: "9:00 A.M. Monday to Friday",
+    owed_money: debt.sample,
+    user: user_cafe16
+  },{
+    image_url: "https://images.unsplash.com/photo-1494346480775-936a9f0d0877?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1003&q=80",
+    name: "The Nomad", location: "Carrer de larrard 57-59, Barcelona, ES 08024",
+    opening_times: "9:00 A.M. Monday to Friday",
+    owed_money: debt.sample,
+    user: user_cafe17
+  }
 ]
 
 puts "Creating Millad's profile"

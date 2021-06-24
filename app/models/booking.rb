@@ -4,8 +4,7 @@ class Booking < ApplicationRecord
   has_one :review, dependent: :nullify
   has_one :cafe, through: :table
   enum status: [:pending, :accepted, :declined]
-  
-  before_create :set_booking_times
+  # before_create :set_booking_times
   before_create :set_owed_money
   
   SLOTS = {morning: {start: 11, end: 15}, afternoon: {start: 15, end: 19}}
