@@ -13,7 +13,13 @@
 
 
 /* UI - HEADER */
-
+.sub-nav ul {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    background: #fff;
+    border-top: solid 1px #ccc;
+}
   .header-nav {
     background: #fff;
     position: sticky;
@@ -118,4 +124,3 @@
 .fas.fa-search {
   color: $nomacafe;
 }
-
