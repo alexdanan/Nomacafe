@@ -545,7 +545,7 @@ end_times = [15, 19]
 descriptions = [
   "Table by the window", 
   "Table by the corner", 
-  "Table by aircon",
+  "Table by air conditioner",
   "Table middle of the room",
   "Table by the stalls", 
   "Table with sunlight"
@@ -720,8 +720,92 @@ file = URI.open("https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixid=
 alexia_cafe.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
 alexia_cafe.save!
 
+alexia_table_1 = Table.create!(
+  cafe: alexia_cafe,
+  spots: seating.sample,
+  min_credits: min_debt.sample,
+  seat: "chair",
+  name: "Table with sunlight and breeze",
+  wifi: false,
+  outlet: true,
+  outside: true
+)
 
+alexia_table_2 = Table.create!(
+  cafe: alexia_cafe,
+  spots: seating.sample,
+  min_credits: min_debt.sample,
+  seat: "sofa",
+  name: descriptions.sample,
+  wifi: true,
+  outlet: true,
+  outside: false
+)
 
+alexia_table_3 = Table.create!(
+  cafe: alexia_cafe,
+  spots: seating.sample,
+  min_credits: min_debt.sample,
+  seat: "chair",
+  name: descriptions.sample,
+  wifi: true,
+  outlet: true,
+  outside: false
+)
+
+alexia_table_4 = Table.create!(
+  cafe: alexia_cafe,
+  spots: seating.sample,
+  min_credits: min_debt.sample,
+  seat: "chair",
+  name: descriptions.sample,
+  wifi: true,
+  outlet: outlet.sample,
+  outside: false
+)
+
+alexia_reviews = [
+  { rating: 5, content: "This is possibly the best thing that has happened to me in my entire life, I am overcome with joy." },
+  { rating: 4, content: "I, Greg, approve." },
+  { rating: 5, content: "My only regret is that I can only give 5 stars instead of 10." },
+  { rating: 4, content: "One of the best spots to program and chill I've ever seen" }
+]
+
+date_array = []
+10.times do
+  new_date_time = (DateTime.now + (-5..10).to_a.sample)
+  date_array << new_date_time
+end
+
+alexia_tables = [alexia_table_1, alexia_table_2, alexia_table_3, alexia_table_4]
+alexia_tables.each_with_index do |table, index|
+  date = date_array.sample
+  alexia_booking = Booking.create!(
+    user: nomad_users.sample,
+    table: table,
+    slots: [
+      "morning_#{date}",
+      "afternoon_#{date}"
+    ],
+    status: 1
+  )
+  Review.create!(
+      rating: alexia_reviews[index][:rating], 
+      content: alexia_reviews[index][:content], 
+      booking: alexia_booking
+  )
+end
+
+# date = date_array.sample
+# alexia_booking = Booking.create!(
+#   user: nomad_users.sample,
+#   table: table,
+#   slots: [
+#     "morning_#{date}",
+#     "afternoon_#{date}"
+#   ],
+#   status: 1
+# )
 
 
 
@@ -817,7 +901,7 @@ booking_text = [
   { text: "Meh, I've seen better", rating: 3 },
 ]
 
-Booking.all.each do |booking|
+Booking.where.not(user_id:alexia_user.id).each do |booking|
   data = booking_text.sample
   Review.create(
     booking_id: booking.id,
