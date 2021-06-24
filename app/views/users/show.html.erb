@@ -59,7 +59,7 @@
               <h2> <%= link_to "#{cafe.name}", cafe_path(cafe) %></h2>
               <p> <%= cafe.location %></p>
             </div>
-            <p class="card-trip-pricing"><small>Minimim credits applied: <%=cafe.credits_range %></small></p>
+            <p class="card-trip-pricing"><small>Min credits: <%=cafe.credits_range.try(:html_safe) %></small></p>
           </div>
         </div>
       <% end %>

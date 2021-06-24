@@ -211,6 +211,10 @@ user_cafe12.photo.attach(io: file, filename: 'image.png', content_type: 'image/p
 user_cafe12.save!
 
 
+
+
+
+
 # user_cafe13 = User.create!(
 #   email: "lazcano@gmail.com",
 #   password: "password",
@@ -538,7 +542,7 @@ outside = [true, false]
 
 cafes = [
   {
-    image_url: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1930&q=80",
+    image_url: "https://images.unsplash.com/photo-1508424757105-b6d5ad9329d0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
     name: "BROEI", location: "Avinguda Diagonal, 208, 08018 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
     user: user_cafe1
@@ -599,7 +603,7 @@ cafes = [
   },
   {
     image_url: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
-    name: "Pietro's", location: "Carrer de la Mare de Déu del Coll, 73, 08023 Barcelona, Spain",
+    name: "Pietro's", location: "Carrer de l'Escorial, 17, 08024 Barcelona",
     opening_times: "9:00 A.M. Monday to Friday",
     user: user_cafe11
   },
@@ -631,6 +635,66 @@ cafes = [
   #   user: user_cafe15
   # }
 ]
+
+puts "Creating Millad's profile"
+
+millad_user = User.create!(
+  email: "millad@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: "millad",
+  full_name: "Millad Shadpour",
+  description: description.sample,
+  nomacafe_type: "nomad"
+  )
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1619192660/rqy8htlgdo9v0fvujs14.jpg")
+millad_user.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+millad_user.save!
+
+
+alexia_user = User.create!(
+  email: "alexia@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: "alexia",
+  full_name: "Alexia Danan",
+  description: description.sample,
+  nomacafe_type: "cafe"
+  )
+file = URI.open("https://avatars.githubusercontent.com/u/80625819?v=4")
+alexia_user.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+alexia_user.save!
+
+
+carlos_user = User.create!(
+  email: "carlos@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  user_name: "lacueva",
+  full_name: "Carlos Lacueva",
+  description: description.sample,
+  nomacafe_type: "nomad"
+  )
+file = URI.open("https://avatars.githubusercontent.com/u/78426436?v=4")
+carlos_user.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+carlos_user.save!
+
+
+alexia_cafe = Cafe.create!(
+  name: "Gatsby Cafe",
+  location: "Carrer de Roger de Flor, 316, 08025 Barcelona",
+  opening_times: "9:00 A.M. Monday to Friday",
+  user: alexia_user
+  )
+
+file = URI.open("https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1330&q=80")
+alexia_cafe.photo.attach(io: file, filename: 'image.png', content_type: 'image/png')
+alexia_cafe.save!
+
+
+
+
+
 
 reviews = [
   { rating: 5, content: "This is possibly the best thing that has happened to me in my entire life, I am overcome with joy." },
