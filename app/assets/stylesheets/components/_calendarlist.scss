@@ -1,5 +1,6 @@
 .fc .fc-toolbar.fc-header-toolbar {
   padding: 0 15px;
+  margin-top: 1.5em;
 }
 
 .fc .fc-toolbar-title {
@@ -52,6 +53,10 @@
 
 .fc-list-day-side-text{
   color: $nomacafe !important;
+}
+
+.fc-list-event {
+  display: block;
 }
 
 .fc-list-event-time{
