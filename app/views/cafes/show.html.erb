@@ -41,7 +41,10 @@
             <label for="tab2">Menu</label>
           </li>
           <li>
-            <label for="tab3">Nomad Reviews</label>
+            <label for="tab3">Reviews:
+              <span class="score"><%= @cafe.average_rating %> <i class="fas fa-star"></i></span>
+              <small class="num-score">(<%= @cafe.reviews.count %>)</small>
+            </label>
           </li>
         </ul>
       </div>
@@ -51,28 +54,7 @@
             <h3><%= @cafe.name %></h3>
             <span class="cafe-info"><%= @cafe.location %></span>
           </div>
-          <div class="cafe-review">
-            <div class="inner">
-              <ul>
-                <li>
-                  <div class="nomad-review">
-                    <span class="title">Nomad Reviews:</span>
-                    <span class="score"><%= @cafe.average_rating %><i class="fas fa-star"></i></span>
-                    <span class="num-score">(<%= @cafe.reviews.count %>)</span>
-                  </div>
-                </li>
-                <% unless @user_reviews.empty? %>
-                  <li>
-                    <div class="main-review">
-                      <span class="title">Your Review(s):</span>
-                      <span class="score"><%= @average_user_rating %><i class="fas fa-star"></i></span>
-                      <span class="num-score">(<%=@user_reviews.count %>)</span>
-                    </div>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
+
           <!--[-] Reviews -->
           <!--[+] Caffee Policy -->
           <div class="caffee-policy">
