@@ -722,7 +722,7 @@ alexia_cafe.save!
 
 alexia_table_1 = Table.create!(
   cafe: alexia_cafe,
-  spots: seating.sample,
+  spots: 4,
   min_credits: min_debt.sample,
   seat: "chair",
   name: "Table with sunlight and breeze",
