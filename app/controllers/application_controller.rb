@@ -31,4 +31,8 @@ class ApplicationController < ActionController::Base
   def set_user_type
     session[:user_type] = params[:user_type] if controller_name == "pages" && action_name == "dashboard" && current_user.nil?
   end
+
+  def after_sign_in_path_for(resource)
+   cafes_path
+  end
 end
