@@ -1,0 +1,13 @@
+.size-adjustment {
+  min-height: 84vh;
+  background-size: cover;
+  .order-container {
+    background-color: #000000a2;
+    border-radius: 5px;
+    color: #f4f4f4;
+    padding: 8px;
+  }
+  .btn-orders a {
+    padding: 6px;
+  }
+}
