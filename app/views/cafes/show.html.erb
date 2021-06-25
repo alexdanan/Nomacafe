@@ -62,7 +62,7 @@
           <!--[+] TABLE BOOK-->
             <div class="calendar-days d-flex w-100 justify-content-around">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" data-bookings-target="label" aria-haspopup="true" aria-expanded="false">
                   Select Day
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -134,7 +134,7 @@
                     <% Booking::SLOTS.keys.each do |key| %>
                     <!--[+] ITEM -->
                     <div class="slot-info">
-                      <div class="time"><%= key.capitalize %></div>
+                      <div class="time"><%= Booking::SLOTS[key.to_sym][:start] %>.00 - <%= Booking::SLOTS[key.to_sym][:end] %>.00</div>
                       <div class="slot-info-container">
                         <div class="slot-info-inner">
                           <span class="spots-info">
@@ -165,8 +165,8 @@
                     </div>
                     <% end %>
                     <!--[-] ITEM -->
-                    <div class="slot-button">
-                     <%= f.submit "Book", class:'btn btn-primary btn-flat' %>
+                    <div class="slot-button mb-2">
+                      <%= f.submit "Book", class: 'btn btn-primary primary-btn btn-flat' %>
                     </div>
                   </div>
                   <% end %>
