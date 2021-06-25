@@ -57,6 +57,19 @@
 .caffee-tabs ul li:hover, .caffee-tabs ul li label {
     cursor: pointer;
 }
+
+#tab1:checked ~ .caffee-tabs .tab1:after,
+#tab2:checked ~ .caffee-tabs .tab2:after,
+#tab3:checked ~ .caffee-tabs .tab3:after {
+  content: '';
+  height: 2px;
+  background: white;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
 /* END [TABS CONTROLS] */
 /* BURGER MENU */
 .expandet-burger{

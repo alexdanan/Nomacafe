@@ -32,15 +32,13 @@
       <input class="no" id="tab3" type="radio" name="tabs" />
       <div class="caffee-tabs">
         <ul>
-          <li>
-
+          <li class="tab1 position-relative">
             <label for="tab1">Info</label>
           </li>
-          <li>
-
+          <li class="tab2 position-relative">
             <label for="tab2">Menu</label>
           </li>
-          <li>
+          <li class="tab3 position-relative">
             <label for="tab3">Reviews:
               <span class="score"><%= @cafe.average_rating %> <i class="fas fa-star"></i></span>
               <small class="num-score">(<%= @cafe.reviews.count %>)</small>
