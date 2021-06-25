@@ -14,6 +14,7 @@
           <%= t.input :end_time, as: :string, required: false, input_html: {class: "timepicker"} %>
           <p>Current Nomads at table: </p>
           <div class = "d-flex flex-wrap">
+            <%# raise %>
             <%@booking.table.bookings_by_slot(@booking.start_time, @booking.slots.first.split("_").first).where(visible: true).each do |booking|%>
               <div class = "nomad-profile">
                 <%= link_to user_path booking.user do %>

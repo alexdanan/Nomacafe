@@ -145,6 +145,7 @@
                             <% end %>
                             </span>
                           <div class="spot-nomad-info">
+                              <%# raise if index == 6 %>
                               <%table.bookings_by_slot((DateTime.now + index + 1), key).where(visible: true).each do |booking|%>
                               <div class = "nomad-profile">
                               <%= link_to user_path booking.user do %>
@@ -159,7 +160,7 @@
                           </div>
                         </div>
                         <%if table.spots_left((DateTime.now + index + 1), key).positive? %>
-                        <%= f.check_box :slots, {multiple: true}, "#{key}_#{DateTime.now + 1}", nil %>
+                        <%= f.check_box :slots, {multiple: true}, "#{key}_#{DateTime.now + index + 1}", nil %>
                         <%end%>
                       </div>
                     </div>
