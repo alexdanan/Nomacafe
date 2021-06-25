@@ -1,8 +1,10 @@
-
-
-.calendar-days{
-  background-color: $nomacafe;
+.day-input{
+  text-align: center;
 }
+
+// .calendar-days{
+//   background-color: $nomacafe;
+// }
 
 .day-input:hover{
   opacity: 80%;
@@ -15,23 +17,34 @@
   border-color: $nomacafe !important
 }
 
-.dropdown-menu{
-  text-align: center;
-}
+// .dropdown-menu{
+//   text-align: center;
+// }
 
-input[type="submit" i] {
-}
+// input[type="submit" i] {
+// }
 
 .time {
-  width: 80px !important;
+  // height: 90px !important;
+  width: 120px !important;
   background-color: $nomacafe !important;
-  color: #fff;
+  color: #fff !important;
+  margin-top: 10px;
+  padding-right: 0px !important;
+  padding-left: 0px !important;
 }
 
-input[type="checkbox" i]:hover {
-  cursor: pointer;
-}
+// input[type="checkbox" i]:hover {
+//   cursor: pointer;
+// }
 
-input[type="checkbox" i] {
-  margin-top: 15px;
-}
+// input[type="checkbox" i] {
+//   margin-top: 15px;
+// }
+
+// input[type="submit" i] {
+// }
+
+// .slot-info{
+//   margin-top: 15px;
+// }

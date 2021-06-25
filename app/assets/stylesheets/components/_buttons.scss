@@ -34,7 +34,7 @@ body{
 
 .cafe-fav {
   position: absolute;
-  top: 60px;
+  top: 71px;
   left: 16px;
 }
 .packages-page {
@@ -42,8 +42,7 @@ body{
     padding-top: 50px;
 }
 .sub-nav {
-    // position: fixed;
-    position: sticky;
+    position: fixed;
     bottom: 0px;
     z-index: 9999;
     background: #fff;

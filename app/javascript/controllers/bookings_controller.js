@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-    static targets = ["slot"]
+    static targets = ["slot", "label"]
 
     select(e) {
         this.slotTargets.forEach(slot => {
@@ -10,7 +10,8 @@ export default class extends Controller {
         })
         this.slotTargets[e.target.dataset.index].classList.toggle("d-none")
         this.slotTargets[e.target.dataset.index].classList.toggle("d-block")
+
+        this.labelTarget.innerText = e.target.innerText
     }
 }
-
 

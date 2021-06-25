@@ -82,7 +82,7 @@
           <!--[+] TABLE BOOK-->
             <div class="calendar-days d-flex w-100 justify-content-around">
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" data-bookings-target="label" aria-haspopup="true" aria-expanded="false">
                   Select Day
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -101,118 +101,42 @@
                 <li>
                   <input class="no" id="slot-1" type="radio" name="slots">
                   <input class="no" id="null" type="radio" name="slots">
-                  <div class="slot-title">
-                    <div class=""><%= table.name.capitalize%> - <%= table.spots %> Spots</div>
-                    <div class="slot-icons">
-                      <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 489.3 489.3" style="enable-background:new 0 0 489.3 489.3;" xml:space="preserve">
-<g>
-	<g>
-		<path d="M79.55,229.675c-10.2,10.2-10.2,26.8,0,37.1c10.2,10.2,26.8,10.2,37.1,0c70.6-70.6,185.5-70.6,256.1,0    c5.1,5.1,11.8,7.7,18.5,7.7s13.4-2.6,18.5-7.7c10.2-10.2,10.2-26.8,0-37.1C318.75,138.575,170.55,138.575,79.55,229.675z"/>
-		<path d="M150.35,300.475c-10.2,10.2-10.2,26.8,0,37.1c10.2,10.2,26.8,10.2,37.1,0c31.5-31.6,82.9-31.6,114.4,0    c5.1,5.1,11.8,7.7,18.5,7.7s13.4-2.6,18.5-7.7c10.2-10.2,10.2-26.8,0-37C286.95,248.475,202.35,248.475,150.35,300.475z"/>
-		<circle cx="244.65" cy="394.675" r="34.9"/>
-		<path d="M481.65,157.675c-130.7-130.6-343.3-130.6-474,0c-10.2,10.2-10.2,26.8,0,37.1c10.2,10.2,26.8,10.2,37.1,0    c110.2-110.3,289.6-110.3,399.9,0c5.1,5.1,11.8,7.7,18.5,7.7s13.4-2.6,18.5-7.7C491.85,184.575,491.85,167.975,481.65,157.675z"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
-</span>
-                      <span><svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 512 512" height="512" viewBox="0 0 512 512" width="512"><g><path d="m406 92h-45v-77c0-8.284-6.716-15-15-15s-15 6.716-15 15v77h-150v-77c0-8.284-6.716-15-15-15s-15 6.716-15 15v77h-45c-8.28 0-15 6.72-15 15v60c0 8.28 6.72 15 15 15h15v75c0 69.63 52.98 127.11 120.75 134.25h.002c7.142 67.766 64.621 120.75 134.248 120.75 8.284 0 15-6.716 15-15s-6.716-15-15-15c-53.13 0-97.163-39.667-104.056-90.939h.006c66.95-7.911 119.05-65.021 119.05-134.061v-75h15c8.28 0 15-6.72 15-15v-60c0-8.28-6.72-15-15-15zm-109.39 175.61-30 30c-13.91 13.91-35.27-7.16-21.22-21.22l15.29-15.28-41.39-20.69c-9.14-4.58-11.13-16.79-3.9-24.03l30-30c14.02-14.02 35.26 7.17 21.22 21.22l-15.29 15.28 41.39 20.69c9.14 4.58 11.13 16.79 3.9 24.03z"/></g></svg></span>
-                      <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="45.16px" height="45.16px" viewBox="0 0 45.16 45.16" style="enable-background:new 0 0 45.16 45.16;" xml:space="preserve">
-<g>
-	<g>
-		<path d="M22.58,11.269c-6.237,0-11.311,5.075-11.311,11.312s5.074,11.312,11.311,11.312c6.236,0,11.311-5.074,11.311-11.312    S28.816,11.269,22.58,11.269z"/>
-		<g>
-			<g>
-				<path d="M22.58,7.944c-1.219,0-2.207-0.988-2.207-2.206V2.207C20.373,0.988,21.361,0,22.58,0c1.219,0,2.207,0.988,2.207,2.207      v3.531C24.787,6.956,23.798,7.944,22.58,7.944z"/>
-			</g>
-			<g>
-				<path d="M22.58,37.215c-1.219,0-2.207,0.988-2.207,2.207v3.53c0,1.22,0.988,2.208,2.207,2.208c1.219,0,2.207-0.988,2.207-2.208      v-3.53C24.787,38.203,23.798,37.215,22.58,37.215z"/>
-			</g>
-			<g>
-				<path d="M32.928,12.231c-0.861-0.862-0.861-2.259,0-3.121l2.497-2.497c0.861-0.861,2.259-0.861,3.121,0      c0.862,0.862,0.862,2.26,0,3.121l-2.497,2.497C35.188,13.093,33.791,13.093,32.928,12.231z"/>
-			</g>
-			<g>
-				<path d="M12.231,32.93c-0.862-0.863-2.259-0.863-3.121,0l-2.497,2.496c-0.861,0.861-0.862,2.26,0,3.121      c0.862,0.861,2.26,0.861,3.121,0l2.497-2.498C13.093,35.188,13.093,33.79,12.231,32.93z"/>
-			</g>
-			<g>
-				<path d="M37.215,22.58c0-1.219,0.988-2.207,2.207-2.207h3.531c1.219,0,2.207,0.988,2.207,2.207c0,1.219-0.988,2.206-2.207,2.206      h-3.531C38.203,24.786,37.215,23.799,37.215,22.58z"/>
-			</g>
-			<g>
-				<path d="M7.944,22.58c0-1.219-0.988-2.207-2.207-2.207h-3.53C0.988,20.373,0,21.361,0,22.58c0,1.219,0.988,2.206,2.207,2.206      h3.531C6.956,24.786,7.944,23.799,7.944,22.58z"/>
-			</g>
-			<g>
-				<path d="M32.928,32.93c0.862-0.861,2.26-0.861,3.121,0l2.497,2.497c0.862,0.86,0.862,2.259,0,3.12s-2.259,0.861-3.121,0      l-2.497-2.497C32.066,35.188,32.066,33.791,32.928,32.93z"/>
-			</g>
-			<g>
-				<path d="M12.231,12.231c0.862-0.862,0.862-2.259,0-3.121L9.734,6.614c-0.862-0.862-2.259-0.862-3.121,0      c-0.862,0.861-0.862,2.259,0,3.12l2.497,2.497C9.972,13.094,11.369,13.094,12.231,12.231z"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg></span>
-
+                  <div class="slot-title d-flex flex-column">
+                    <div class="d-flex justify-content-between">
+                      <div class=""><%= table.name.capitalize%> - <%= table.spots %> Spots</div>
+                      <label class="label-open" for="slot-1">Open</label>
+                      <label class="label-close" for="null">Close</label>
                     </div>
-                    <label class="label-open" for="slot-1">Open</label>
-                    <label class="label-close" for="null">Close</label>
+                    <div class="slot-icons pb-2">
+                      <span>
+                      <% if table.seat == "chair" %>
+                        <i class="fas fa-chair"></i>
+                      <% else %>
+                        <i class="fas fa-couch"></i>
+                      <% end %>
+                      </span>
+                      <span>
+                        <% if table.wifi == true %>
+                          <i class="fas fa-wifi"></i>
+                        <% else %>
+                          <i class="fas fa-wifi" id="grey-wifi"></i>
+                        <% end %>
+                      </span>
+                      <span>
+                        <% if table.outlet == true %>
+                          <i class="fas fa-solid fa-plug"></i>
+                        <% else %>
+                          <i class="fas fa-solid fa-plug" id="grey-plug"></i>
+                        <% end %>
+                      </span>
+                      <span>
+                        <% if table.outside == true %>
+                          <i class="fas fa-sun"></i>
+                        <% else %>
+                          <i class="fas fa-sun" id="grey-sun"></i>
+                        <% end %>
+                      </span>
+                    </div>
                   </div>
                   <% 7.times do |index| %>
                   <div class="slot-container d-none" data-bookings-target="slot">
@@ -230,7 +154,7 @@
                     <% Booking::SLOTS.keys.each do |key| %>
                     <!--[+] ITEM -->
                     <div class="slot-info">
-                      <div class="time"><%= key.capitalize %></div>
+                      <div class="time"><%= Booking::SLOTS[key.to_sym][:start] %>.00 - <%= Booking::SLOTS[key.to_sym][:end] %>.00</div>
                       <div class="slot-info-container">
                         <div class="slot-info-inner">
                           <span class="spots-info">
@@ -261,8 +185,8 @@
                     </div>
                     <% end %>
                     <!--[-] ITEM -->
-                    <div class="slot-button">
-                      <%= f.submit "Book" %>
+                    <div class="slot-button mb-2">
+                      <%= f.submit "Book", class: 'btn btn-primary primary-btn btn-flat' %>
                     </div>
                   </div>
                   <% end %>
