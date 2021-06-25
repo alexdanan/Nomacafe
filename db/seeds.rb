@@ -33,13 +33,13 @@ headers = { "X-API-KEY": "CE4F350C-B88643FB-9C69B4CE-5194249D" }
 res = HTTParty.get("https://uifaces.co/api?limit=30&emotion[]=happiness", headers: headers)
 res = JSON.parse(res.body)
 
-usernames = ["thedeparted", "sauce", "pumpkins", "composition", "greatsquare", "normanbates", "ocean", "thesting", "blackeye", "bat"]
+usernames = ["coffe_lover", "nomad", "milshad", "alexdanan", "digitally", "coding_mondays", "ctrl+s", "freelancer", "lacueva", "vladislav", "stack_overflow", "git_hubber", "rake", "nomacafe_user_03", "entrepeneur"]
 fullnames = ["Adrian Lazcano", "Ferran Aliagas", "Isaac Basas", "Arnau Gabriel", "Álvaro Delgado", "César Reigada", "Georg Ingrid", "Oscar Fortit", "Ingrid Montserrat", "Bruce Wayne", "Johnathan Kleio", "Gorge Martin", "Elena Garcia"]
 description = [
-"Hello fellow humans, it is I ${completely_real_human_name}, a completely normal, average, and very human earthling, with no ill intentions of ANY kind. I enjoy human things, like oxygen intake, H20 consumption, the subjugation of inferior races, and programming. Bring me to your leader.",
-"I, self made entrepeneur extraordinare, conosseur of the coding arts and other french words, invite you all (as long as you pay) to bask in the glory of my everlasting (as long as i don't get tired) pressence and genius as I proceed to display the magic of my coding skills and aid you on your endeavours (for payment ofcourse).",
-"Hello world, searching to meet up and kick programming butt? Finding me is easy, just picture an image of a confident, skilled, tall, blonde hottie. Got it? Cool, now picture the exact opposite and you'll probably find me sulking in the corner of my usual cafés, typing through tears.",
-"Lorem ipsum dolor sike you thought. You really believed I was just filler text didn't ya? Rookie mistake I tell you, for starters, this is a super real profile page and description, who could forget to delete such an obious placeholder? Lucky for you, I'm always around to help out with any and all coding questions, my kindness truly knows no bounds."
+"Hey there! My favourite coffes are capucchinos and lattes, I live around Gràcia and hope to see you around to code together!",
+"Good day, looking for someone to chat about start ups and coding prohects? I'm just around the corner, you can always find me in one of my favourites cafes so we can have a nice chat!",
+"Hello world, searching to meet up and crunch some code lines? Come over and we can help eachother, everything is easier as a team. wouldn't you say?",
+"Hello there! I'm new to the programming world, but I'm still excited to learn! If you want to practice with me, don't be afraid to come over! A warm seat will always be open!"
 ]
 puts "Creating users(cafes)!"
 
